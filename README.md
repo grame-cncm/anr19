@@ -18,7 +18,7 @@
 ### Examples of applications/fiels that would benefit directly from this type of research
 
 #### Low latency synthesizers/audio effects
-
+ 
 That's probably the most obvious application from our perspective. Audio latency is directly linked to the "reactivity" of digital musical instruments. Most acoustic musical instruments can produce sound instantaneously which is not the case of digital instruments. Musicians on stage need to have the lowest latency when using audio effects (i.e., guitar pedals, etc.) and sound synthesizer to be able to perform fast and expressively. FPGA-based synthesizer modules and effect processors could help to significantly decrease the latency of this type of systems.
 
 #### Noise cancellation / active acoustic control
