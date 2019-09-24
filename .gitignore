@@ -1,1 +1,10 @@
 template
+proposal/*.aux
+proposal/*.bbl
+proposal/*.blg
+proposal/*.fdb_latexmk
+proposal/*.fls
+proposal/*.log
+proposal/*.out
+proposal/*.pdf
+proposal/*.synctex.gz
