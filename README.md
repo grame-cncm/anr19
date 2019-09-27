@@ -37,3 +37,8 @@ The idea here is very close to the previous one but applied to musical instrumen
 
 High fidelity physical models of musical instruments are now being increasingly used on stage. However, they require a tremendous amount of computation out of reach to most personal computers or standard computing platforms for audio (i.e., DSPs, etc.). Algorithms used for physical modeling can be easily parallelized and could therefore benefit from FPGAs. 
 
+### Interesting references
+
+* Guitar pedal based on an FPGA: <https://medium.com/@korora_audio/a-case-study-using-fpga-for-audio-dsp-eab4859bdde2>
+* Article on using FPGAs for audio: <https://scialert.net/fulltextmobile/?doi=jas.2014.1972.1977>
+* <https://en.antelopeaudio.com/hardware-based-fpga-effects/>

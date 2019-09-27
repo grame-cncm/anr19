@@ -145,7 +145,7 @@
 \newcommand{\mydomain}[0]{8.6}
 \newcommand{\myinstrument}[0]{PRC}
 \author{Coordinateur: Romain Michon\\
-\small GRAME.
+\small GRAME-CNCM, Lyon.
 }
 
 %% Headers
@@ -164,8 +164,8 @@
 
 
 \title{\vspace{-\baselineskip}\mytitle}
-\date{Domaine : Tansversal (?)\\
-YYY}
+\date{Domaine transversaux\\
+Axe 8.6 - Révolution numérique : rapports au savoir et à la culture}
 
 \newcommand{\content}[1]{\emph{#1}\\} 
 
@@ -187,6 +187,44 @@ YYY}
 
 %\section{Contexte, positionnement et objectif(s) de la proposition}
 \section{Context, position and objectives of the proposal}
+
+What we're missing: a platform for real-time audio DSP with the following features: 
+
+\begin{itemize}
+  \item ultra-low latency
+  \item multichannel (the greater the merrier both for in and out)
+  \item high computational power
+  \item programmable at a high level
+\end{itemize}
+
+\noindent
+What applications are we targeting? 
+
+\begin{itemize}
+  \item audio effects and synthesizers for musical applications
+  \begin{itemize}
+    \item low latency stompboxes/guitar pedals, etc.
+    \item real-time DSP algorithms requiring high performances (e.g., finite difference scheme physical modeling, modal reverbs, wave digital filters for virtual analog applications, etc.)
+  \end{itemize}
+  \item active control of acoustics
+  \begin{itemize}
+    \item noise cancellation in any acoustical space: car, room, etc.
+    \item concert hall acoustics modification
+    \item archeoacoustics
+  \end{itemize}
+  \item active control of acoustic musical instruments
+  \begin{itemize}
+    \item for muting
+    \item for hybrid digital lutherie
+  \end{itemize}
+  \item active control in general
+  \begin{itemize}
+    \item Pierre?
+  \end{itemize}
+\end{itemize}
+
+Since we're going for the ``8.6 Révolution numérique : rapports au savoir et à la culture'' category, we really need to emphasize the creative and artistic dimension of the project. In that context, its accessible dimension (i.e., Faust for high level programming) is crucial.
+
 %Sur une page et demie (1,5) environ, 
 %Décrire les objectifs et les hypothèses scientifiques
 %Montrer l’originalité et la pertinence par rapport à l’état de l’art
