@@ -24,6 +24,10 @@ Another less recent paper by Math Verstraelen on using WaveCore to program FPGAs
 
 Basically preliminary version of 2019-DAFX.
 
+## 2013-ISCN: The flexible sound synthesizer on an FPGA
+
+Funny project, very Japanese but interesting.
+
 ## 2012-PARALLEL: Design Space Exploration in Many-Core Processors for Sound Synthesis of Plucked String Instruments
 
 Very interesting paper considering all sorts of multiprocessor hardware for plucked string instruments including FPGAs.
