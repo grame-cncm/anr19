@@ -138,6 +138,9 @@
 {\color{ANRblue}\normalfont\sffamily}
 {\color{ANRblue}\theparagraph}{1em}{}
 
+\newcommand{\F}{\textsc{Faust}}
+\newcommand{\PP}{our project}
+
 %titre, acronyme, défi, instrument
 \newcommand{\myacro}[0]{XXXX}
 \newcommand{\mytitle}[0]{\myacro: \\The long title of the ANR project}
@@ -188,42 +191,22 @@ Axe 8.6 - Révolution numérique : rapports au savoir et à la culture}
 %\section{Contexte, positionnement et objectif(s) de la proposition}
 \section{Context, position and objectives of the proposal}
 
-What we're missing: a platform for real-time audio DSP with the following features: 
+Real-time audio Digital Signal Processing (DSP) is used at the core of many systems ranging from musical instruments to active acoustics correction technologies, speakers, etc. Latency plays a crucial role in this context.  In the domain of music, wether we're talking about a digital mixing desk, a musical instrument (e.g., synthesizers, effects/guitar pedals, etc.), or a digital speaker or microphone, the perception of latency can have a significant impact on playability. In the domain of active control applied to acoustics where it is typically necessary to ``beat'' acoustical waves by processing signals faster than the speed of sound, low latency is a determining factor.   
 
-\begin{itemize}
-  \item ultra-low latency
-  \item multichannel (the greater the merrier both for in and out)
-  \item high computational power
-  \item programmable at a high level
-\end{itemize}
+While audio processing latency can be reduced on ``standard'' computing platforms (i.e., personal computers based on CPU\footnote{\textit{Central Processing Unit}}s by using dedicated hardware (i.e., audio interfaces, etc.) and software (i.e., low-latency Linux kernels, etc.) solutions, buffering remains a limiting factor and going under the one millisecond threshold (which corresponds to a distance of about 35cm in the air) is usually impossible. Various alternative based on specific computing platforms such as DSPs, microcontrollers, CPU-based computers used without an Operating System (OS) ``bare-metal'', etc. can help to further reduce audio latency. However, Field Programmable Gate Arrays (FPGAs) can be seen as the most radical and efficient technology in this context by providing a buffer-less straight computational path.
 
-\noindent
-What applications are we targeting? 
+FPGAs are increasingly used in the context of real-time audio DSP both in the industry (i.e., Antelope Audio\footnote{\url{https://en.antelopeaudio.com/}}, Korora Audio\footnote{\url{https://www.kororaaudio.com/}} and in academia (TODO: cite), mostly for their computational capabilities and in some rarer cases for their low-latency performances. Similarly, FPGA-based boards specifically targeting audio applications such as Dada Machines' Doppler\footnote{\url{https://dadamachines.com/product/doppler/}} are starting to appear. 
 
-\begin{itemize}
-  \item audio effects and synthesizers for musical applications
-  \begin{itemize}
-    \item low latency stompboxes/guitar pedals, etc.
-    \item real-time DSP algorithms requiring high performances (e.g., finite difference scheme physical modeling, modal reverbs, wave digital filters for virtual analog applications, etc.)
-  \end{itemize}
-  \item active control of acoustics
-  \begin{itemize}
-    \item noise cancellation in any acoustical space: car, room, etc.
-    \item concert hall acoustics modification
-    \item archeoacoustics
-  \end{itemize}
-  \item active control of acoustic musical instruments
-  \begin{itemize}
-    \item for muting
-    \item for hybrid digital lutherie
-  \end{itemize}
-  \item active control in general
-  \begin{itemize}
-    \item Pierre?
-  \end{itemize}
-\end{itemize}
+FPGAs are configured/programmed using a Hardware Description Language (HDL) such as VHDL or Verilog. The learning curve and the electrical engineering skills required to master this type of environments make it out of reach to the real-time audio DSP community. While there exists solutions to program FPGAs at a higher level (i.e., LabVIEW,\footnote{\url{https://www.ni.com/fr-fr/shop/labview.html}} Vivado HLS,\footnote{\url{https://www.xilinx.com/HLS}} etc.) none of them is specifically dedicated nor adapted to real-time audio DSP. 
 
-Since we're going for the ``8.6 Révolution numérique : rapports au savoir et à la culture'' category, we really need to emphasize the creative and artistic dimension of the project. In that context, its accessible dimension (i.e., Faust for high level programming) is crucial.
+\F{} \cite{Orlarey2009} is a Domain Specific Language (DSL) for real-time audio signal processing primarily developed at GRAME-CNCM and by a worldwide community. \F{} is based on a compiler ``translating'' DSP specifications written in \F{} into a wide range of lower-level languages (e.g., C, C++, Rust, Java, WASM, LLVM bitcode, etc.). Thanks to its ``architecture'' system, generated DSP objects can be embedded into template programs (wrappers) used to turn a \F{} program into a specific ready-to-use object (e.g., standalone, plug-in, smartphone app, webpage, etc.). In a previous project (SyFaLa\footnote{TODO: do we have a website for SyFaLa? What info do we want to provide here?}), we used Vivado HLS to synthesize a DSP IP from the C++ code generated by the \F{} compiler to program an FPGA development board (Zybo Z7). The entire process was automatized and it is now possible to run a \F{} program to carry out real-time sound synthesis or processing on one of these boards just by running a single command line. While using \F{} significantly simplifies the process of programming the FPGA making this task accessible to the audio, DSP, and DIY communities, generated IPs are quiet inefficient, partly because of floating point operations. Moreover, the audio codec (TODO: ref) provided on the Zybo Z7 only has a stereo input and output and its internal latency is not that good (the measured analog audio input to analog audio output latency after processing on the FPGA ``roundtrip'' is about $800\mu s$ and is mostly due to the audio codec).
+
+The main goal of \PP{} is to develop a platform for ultra-low-latency multichannel (> 16 audio inputs and outputs) high-performance audio processing programmable at a high level using \F{}. This implies the development of an FPGA-based device with multiple audio inputs and outputs (we aim for 64 of each) using low-latency audio codecs. In parallel, an extended investigation on optimizing the IP generated by \F{} will have to be carried out. In particular, allowing fixed-point support in the code generated by the \F{} compiler should be implemented. Eventually, we aim at generating VHDL code directly from the \F{} compiler. % RM: not sure if we want to leave that last sentence
+
+This type of system has a wide range of applications in multiple domains. As mentioned earlier, music technology is in high demand for low latency because it helps increasing the playability of musical instruments on stage. Hence, the platform developed as part of \PP{} could be used to design programmable digital musical instruments and effect processors. In that context, the computational power of the FPGA could be exploited to run complex algorithms (e.g., physical models of musical instruments, modal reverbs, etc.) that are too costly to run on a traditional platform (i.e., laptop, etc.). GRAME-CNCM has decades of experience in that domain. We plan to implement a sound synthesis/processor module based on the platform implemented in \PP{}.
+
+% Say something about mediation at Grame and opening these technologies to a larger audience: scientific culture.
+
 
 %Sur une page et demie (1,5) environ, 
 %Décrire les objectifs et les hypothèses scientifiques
