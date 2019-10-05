@@ -139,15 +139,15 @@
 {\color{ANRblue}\theparagraph}{1em}{}
 
 \newcommand{\F}{\textsc{Faust}}
-\newcommand{\PP}{our project}
+\newcommand{\PP}{our project} 
 
 %titre, acronyme, défi, instrument
 \newcommand{\myacro}[0]{XXXX}
-\newcommand{\mytitle}[0]{\myacro: \\The long title of the ANR project}
+\newcommand{\mytitle}[0]{\myacro: \\Easy High-Performance Ultra-Low-Latency Multichannel Audio Processing and Synthesis}
 \newcommand{\projectname}[0]{XXXX}
 \newcommand{\mydomain}[0]{8.6}
 \newcommand{\myinstrument}[0]{PRC}
-\author{Coordinateur: Romain Michon\\
+\author{Coordinator: Romain Michon\\
 \small GRAME-CNCM, Lyon.
 }
 
@@ -168,7 +168,7 @@
 
 \title{\vspace{-\baselineskip}\mytitle}
 \date{Domaine transversaux\\
-Axe 8.6 - Révolution numérique : rapports au savoir et à la culture}
+Axe 8.6 -- Révolution numérique : rapports au savoir et à la culture}
 
 \newcommand{\content}[1]{\emph{#1}\\} 
 
@@ -182,16 +182,14 @@ Axe 8.6 - Révolution numérique : rapports au savoir et à la culture}
 %\section{Executive summary }
 \begin{tabular}{p{2.3cm} p{12cm}}
   \hline
-  \textbf{Keywords} &   \\\hline
-  \textbf{Challenge and Axe (?? A REVOIR)} & 
+  \textbf{Keywords} & FPGA, Active Control, Artificial Room Acoustics, \F{}, Audio DSP \\\hline
+  \textbf{Domain} & Domaine transversaux, Axe 8.6 -- Révolution numérique : rapports au savoir et à la culture
   \\\hline
 \end{tabular}
 
+\section*{Context, position and objectives of the proposal}
 
-%\section{Contexte, positionnement et objectif(s) de la proposition}
-\section{Context, position and objectives of the proposal}
-
-Real-time audio Digital Signal Processing (DSP) is used at the core of many systems ranging from musical instruments to active acoustics correction technologies, speakers, etc. Latency plays a crucial role in this context.  In the domain of music, wether we're talking about a digital mixing desk, a musical instrument (e.g., synthesizers, effects/guitar pedals, etc.), or a digital speaker or microphone, the perception of latency can have a significant impact on playability \cite{Lago2004}. In the domain of active control applied to acoustics where it is typically necessary to ``beat'' acoustical waves by processing signals faster than the speed of sound, low latency is a determining factor \cite{TODO}.  
+Real-time audio Digital Signal Processing (DSP) is used at the core of many systems ranging from musical instruments to active acoustics correction technologies, speakers, etc. Latency plays a crucial role in this context.  In the domain of music, wether we're talking about a digital mixing desk, a musical instrument (e.g., synthesizers, effects/guitar pedals, etc.), or a digital speaker or microphone, the perception of latency can have a significant impact on playability \cite{Lago2004}. In the domain of active control applied to acoustics where it is typically necessary to ``beat'' acoustical waves by processing signals faster than the speed of sound, low latency is a determining factor \cite{Zhang2018}.  
 
 While audio processing latency can be reduced on ``standard'' computing platforms (i.e., personal computers based on CPU\footnote{\textit{Central Processing Unit}}s by using dedicated hardware (i.e., audio interfaces, etc.) and software (i.e., low-latency Linux kernels, etc.) solutions, buffering remains a limiting factor and going under the ``one millisecond threshold'' (which corresponds to a distance of about 35cm in the air) is usually impossible. Various alternatives based on specific computing platforms such as DSPs, microcontrollers, CPU-based computers used without an Operating System (OS) ``bare-metal'', etc. can help to further reduce audio latency. However, Field Programmable Gate Arrays (FPGAs) can be seen as the most radical and efficient technology in this context by providing a buffer-less straight computational path. 
 
@@ -222,21 +220,12 @@ Finally, applications around active control are not limited to acoustical space.
     \caption{Il faut mettre des figure, ça fixe les idées (sagesse populaire)}
 \label{fig1}
 \end{figure}
-%\section{Organisation du projet et moyens mis en œuvre}
-\section{Project organization and implementation}
+
+\section*{Project organization and implementation}
 
 The project will be led by Romain Michon (GRAME-CNCM,\footnote{\url{http://grame.fr}} Lyon, France // CCRMA,\footnote{\url{https://ccmra.stanford.edu}} Stanford University, USA). GRAME is a ``Centre National de Création Musicale'' (CNCM) organized in three departments: music production, transmission/mediation, and research. GRAME's research department has been leading the development of the \F{} programming language since its creation in 2004. It has expertise in computer science (compilation), audio DSP, digital lutherie, and HCI (Human Computer Interaction) in general. Thanks to the proximity of all three departments at GRAME, research outcomes can easily find their way to professional musical productions and be shared with a general public through the organization of workshops and tight collaborations with the French ministry of education. Hence, the planning of concerts and outreach events around scientific culture leveraging the technology and research outcomes of \PP{} will be facilitated by GRAME's general structure and strike force. Romain Michon has been working on \F{}, digital lutherie, and embedded systems for real-time audio applications for many years. Yann Orlarey who's the father of \F{} and GRAME's scientific director will participate in the project as well. Similarly, Stéphane Letz who's a researcher at GRAME and one of the main developer of \F{} will join the team. 
 
 The two other academic partners of the project will be INSA-Lyon through Tanguy Risset and Florent de Dinechin at the CITI (Center of Innovation in Telecommunications and Integration of Service) and Centrale-Lyon through Pierre Lecomte and Sebastien Ollivier at the Laboratoire de Mécanique des Fluides et d'Acoustique (LMFA). TODO: something about CITI. TODO: something about LMFA.
-
-\paragraph{Human Resources}
-
-\paragraph{Project Organization}
-
-The project is organized in 6 workpackages for a total of 42 months, as detailed in Figure~\ref{fig:wp}. \textit{WP0} deals with management, coordination and dissemination. \textit{WP1} is the heart of the project and the main focus of the PhD. It will deal with adapting the \F{} compiler to generate ready-to-use efficient FPGA IPs. \textit{WP2} will begin at the same time as \textit{WP1} and will focus on implementing the hardware platform (a multichannel FPGA-based audio processor) that will be used throughout the project. \textit{WP3} will leverage the results from \textit{WP1} and \textit{WP2} to implement a spatial reverberation system in the LMFA sound spatialization system that will benefit directly from the computational power of the FPGA. % RM: am I right to say that? Does it have a more official name?
-\textit{WP4} will focus on the development of a hardware and software platform for high efficiency and ultra-low-latency audio signal processing and synthesis. This platform will be controllable through a user interface as well as standard communication protocols used in the field of music (i.e., MIDI, OSC, etc.).
-\textit{WP5} will involve an artist/composer/postdoc who will adapt/use/abuse the technology developed in the previous workpackages to create a musical piece that will be produced with the help of GRAME-CNCM's production department. % RM: yes? no? possible? bad idea?
-Finally, \textit{WP6} will apply the platform developed in \textit{WP1} and \textit{WP2} to acoustics active control. The 2 postdocs linkeds to \textit{WP5} and \textit{WP6} will be led to collaborate. 
 
 \begin{figure}[h]
   \centering
@@ -245,7 +234,23 @@ Finally, \textit{WP6} will apply the platform developed in \textit{WP1} and \tex
   \label{fig:wp}
 \end{figure}
 
+\paragraph{Human Resources}
+
+In addition to the permanent lab members working on the project, one PhD thesis, one postdoc of one year, one postdoc of a year and a half, two 6 months Masters level internships, and one man-year of advanced engineer are foreseen (see Figure~\ref{fig:wp}). The PhD will be dedicated to modify the \F{} compiler to generate efficient FPGA IPs for real-time audio signal processing applications. One of the main challenge will be related to adding fixed-point support to the code generated by \F{} through the use of FloPoCo.\footnote{\url{http://flopoco.gforge.inria.fr/}} The man-year of engineer at CITI will be centered around the development of the FPGA-based multichannel audio signal processor hardware platform that will be used during the next steps of the project. The masters internship at LMFA will consist in using the tools developed during the first year and half of the project to implement a multichannel artificial reverberation system in the LMFA's sound spatialization system. This will serve as a prototype for a larger system that could be used in concert halls in the framework of professional music productions. The Masters internship at GRAME-CNCM will imply the development of an audio effect/sound synthesizer module based on the platform developed in the previous steps of the project and programmable at a high level in \F{}. The postdoc at LMFA will focus on using the platform developed in the previous steps in the context of active control of room acoustics, digital lutherie, and other fields related to audio/acoustics. Finally, the postdoc (who will have a composer/artist profile) at GRAME-CNCM will apply the technologies developed throughout the project in a musical context.
+% RM: we're always talking about "the platform" but perhaps we should give it a name?
+
+\paragraph{Project Organization}
+
+% RM: I think this paragraph is a bit too redundant with the previous one. I don't think this can can be improved though :(... Any thoughts?
+
+The project is organized in 6 workpackages for a total of 42 months, as detailed in Figure~\ref{fig:wp}. \textit{WP0} deals with management, coordination and dissemination. \textit{WP1} is the heart of the project and the main focus of the PhD. It will deal with adapting the \F{} compiler to generate ready-to-use efficient FPGA IPs. \textit{WP2} will begin at the same time as \textit{WP1} and will focus on implementing the hardware platform (a multichannel FPGA-based audio processor) that will be used throughout the project. \textit{WP3} will leverage the results from \textit{WP1} and \textit{WP2} to implement a spatial reverberation system in the LMFA sound spatialization system that will benefit directly from the computational power of the FPGA. % RM: am I right to say that? Does it have a more official name?
+\textit{WP4} will focus on the development of a hardware and software platform for high efficiency and ultra-low-latency audio signal processing and synthesis. This platform will be controllable through a user interface as well as standard communication protocols used in the field of music (i.e., MIDI, OSC, etc.).
+\textit{WP5} will involve an artist/composer/postdoc who will adapt/use/abuse the technology developed in the previous workpackages to create a musical piece that will be produced with the help of GRAME-CNCM's production department. % RM: yes? no? possible? bad idea?
+Finally, \textit{WP6} will apply the platform developed in \textit{WP1} and \textit{WP2} to acoustics active control. The 2 postdocs linkeds to \textit{WP5} and \textit{WP6} will be led to collaborate. 
+
 \paragraph{Budget (j'ai laissé le budget pour voir tableau avec spreadtab}
+
+% RM: I think an important factor here to take into consideration is the equipment budget. Designing the hardware platform for the project (FPGA + multichannel audio ADC/DAC) will certainly have some cost but what if we wanted to buy speakers to implement a large scale sound spatialisation system like Stanford's grail, etc.?
 
 \begin{center}\small
   \begin{spreadtab}{{tabular}{|c|c|c|c|c|c|c|c|c||c|}}
@@ -264,13 +269,7 @@ Finally, \textit{WP6} will apply the platform developed in \textit{WP1} and \tex
 
 \end{center}
 
-
-
-
-
-
-%\section{Impact et retombées du projet}
-\section{Project impact and benefits}
+\section*{Project impact and benefits}
 
 \bibliographystyle{plain}
 \bibliography{main}
