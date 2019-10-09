@@ -203,7 +203,7 @@ Real-time audio DSP is used at the core of many systems ranging from musical ins
 
 While audio processing latency can be reduced on ``standard'' computing platforms (i.e., personal computers based on CPUs (Central Processing Unit) by using dedicated hardware (i.e., audio interfaces, etc.) and software (i.e., low-latency Linux kernels, etc.) solutions, buffering remains a limiting factor and going under the ``one millisecond threshold'' (which corresponds to a distance of about 35cm in the air) is usually impossible. Various alternatives based on specific computing platforms such as DSPs, microcontrollers, CPU-based computers used without an Operating System (OS) ``bare-metal'', etc. can help to further reduce audio latency. However, FPGAs can be seen as the most radical and efficient technology in this context by providing a buffer-less straight computational path. 
 
-FPGAs are increasingly used in the context of real-time audio DSP both in the industry (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} and in academia, mostly for their computational capabilities \cite{Choi2013,Pfeifle2012} and in some rarer cases for their low-latency performances \cite{Verstraelen2014}. Similarly, FPGA-based boards specifically targeting audio applications such as Dada Machines' Doppler\footnote{\url{https://dadamachines.com/product/doppler}} are starting to appear. 
+FPGAs are increasingly used in the context of real-time audio DSP both in the industry (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio\footnote{\url{https://www.kororaaudio.com}}) and in academia, mostly for their computational capabilities \cite{Choi2013,Pfeifle2012} and in some rarer cases for their low-latency performances \cite{Verstraelen2014}. Similarly, FPGA-based boards specifically targeting audio applications such as Dada Machines' Doppler\footnote{\url{https://dadamachines.com/product/doppler}} are starting to appear. 
 
 % F2D: j'ai ajouté le mot "open": je ne sais pas si c'est votre intention.
 One of the goals of \PP{} is to \textbf{develop an open FPGA-based hardware platform} for ultra-low-latency, multichannel (we aim for 64 inputs and outputs) high-performance audio processing, using low-latency audio codecs.
@@ -230,17 +230,13 @@ Finally, applications around active control are not limited to acoustical space.
 
 % Say something about mediation at Grame and opening these technologies to a larger audience: scientific culture. Same for performative aspect: virtual room acoustics in concert situation.
 
-\begin{figure}[h]
-  \centerline{Il faut mettre des figure, ça fixe les idées}
-    \caption{Il faut mettre des figure, ça fixe les idées (sagesse populaire)}
-\label{fig1}
-\end{figure}
-
 \section*{Project Organization and Implementation}
 
-The project will be led by Romain Michon (GRAME-CNCM, Lyon, France // CCRMA,\footnote{\url{https://ccmra.stanford.edu}} Stanford University, USA). GRAME is a ``Centre National de Création Musicale'' (CNCM) organized in three departments: music production, transmission/mediation, and research. GRAME's research department has been leading the development of the \F{} programming language since its creation in 2004. It has expertise in computer science (compilation), audio DSP, digital lutherie, and HCI (Human Computer Interaction) in general. Thanks to the proximity of all three departments at GRAME, research outcomes can easily find their way to professional musical productions and be shared with a general public through the organization of workshops and tight collaborations with the French ministry of education. Hence, the planning of concerts and outreach events around scientific culture leveraging the technology and research outcomes of \PP{} will be facilitated by GRAME's general structure and strike force. Romain Michon has been working on \F{}, digital lutherie, and embedded systems for real-time audio applications for many years. Yann Orlarey who's the father of \F{} and GRAME's scientific director will participate in the project as well. Similarly, Stéphane Letz who's a researcher at GRAME and one of the main developer of \F{} will join the team. 
+The project will be led by Romain Michon (GRAME-CNCM, Lyon, France // CCRMA,\footnote{\url{https://ccmra.stanford.edu}} Stanford University, USA). GRAME is a ``Centre National de Création Musicale'' (CNCM) organized in three departments: music production, transmission/mediation, and computer musirc research. GRAME's research department has been leading the development of the \F{} programming language since its creation in 2004. It has expertise in computer science (compilation), audio DSP, digital lutherie, and HCI (Human Computer Interaction) in general. Thanks to the proximity of all three departments at GRAME, research outcomes can easily find their way to professional musical productions and be shared with a general public through the organization of workshops and tight collaborations with the French ministry of education. Hence, the planning of concerts and outreach events around scientific culture leveraging the technology and research outcomes of \PP{} will be facilitated by GRAME's general structure and strike force. Romain Michon has been working on \F{}, digital lutherie, and embedded systems for real-time audio applications for many years. Yann Orlarey who's the father of \F{} and GRAME's scientific director will participate in the project as well. Similarly, Stéphane Letz who's a researcher at GRAME and one of the main developer of \F{} will join the team. 
 
-The two other academic partners of the project will be INSA-Lyon through Tanguy Risset and Florent de Dinechin at the CITI (Center of Innovation in Telecommunications and Integration of Service) and Centrale-Lyon through Pierre Lecomte and Sebastien Ollivier at the Laboratoire de Mécanique des Fluides et d'Acoustique (LMFA). TODO: something about CITI. TODO: something about LMFA.
+The two other academic partners of the project will be INSA-Lyon through  the CITI laboratory (Center of Innovation in Telecommunications and Integration of Service) and Centrale-Lyon through LMFA laboratory (Laboratoire de Mécanique des Fluides et d'Acoustique). Citi lab will provide important skills about FPGA, high level synthesis and arithmetics operator implementations. Tanguy Risset, Professor at INSA-Lyon,  has been working for many years on HLS for FPGA (working on the Alpha langage) before launching the creation of successively two Inria team-projects related to embedded systems (Compsys and Socrate). Florent de Dinechin, professor at INSA-Lyon, is one of the world specialist of arithmetic operators implementation on FPGA, he is also the creator of the FloPoCo tool that will be used in the project.  His expertise will be an unique opportunity to provide optimal  FPGA designs.
+
+ TODO: something about LMFA.
 
 \begin{figure}[h]
   \centering
@@ -263,23 +259,23 @@ The project is organized in 6 workpackages for a total of 42 months, as detailed
 \textit{WP5} will involve an artist/composer/postdoc who will adapt/use/abuse the technology developed in the previous workpackages to create a musical piece that will be produced with the help of GRAME-CNCM's production department. % RM: yes? no? possible? bad idea?
 Finally, \textit{WP6} will apply the platform developed in \textit{WP1} and \textit{WP2} to acoustics active control. The 2 postdocs linkeds to \textit{WP5} and \textit{WP6} will be led to collaborate. 
 
-\paragraph{Budget (j'ai laissé le budget pour voir tableau avec spreadtab}
+\paragraph{Budget (à la grosse louche)}
 
 % RM: I think an important factor here to take into consideration is the equipment budget. Designing the hardware platform for the project (FPGA + multichannel audio ADC/DAC) will certainly have some cost but what if we wanted to buy speakers to implement a large scale sound spatialisation system like Stanford's grail, etc.?
-
+J'ai mis l'ingé Citi/Grame dans le budget Citi, j'ai mis des chiffres au hasard pour l'équipement (à discuter). Attention, on a un pb avec le taux de précarité (cf dernière page), j'ai du gonfler artificiellement la participation des permanents de chaque institution, et on est toujours au dessus des 30\%, il faut regarder serieusement, je ne sais pas si c'est toujours une contrainte de l'ANR. 
 \begin{center}\small
-  \begin{spreadtab}{{tabular}{|c|c|c|c|c|c|c|c|c||c|}}
+  \begin{spreadtab}{{tabular}{|c|c|c|c||c|}}
 \hline
- &@Insa & \multicolumn{3}{|c|}{@Centrale}  & @Qinteq & @eVaderis  & @Hager & @EDF &  @Total \\ 
-\cline{3-5} & @Citi & @Ampere & @INL & @LTDS & & & & &\\ 
- & @(rate 100\%) & @(100\%) & @(100\%) & @(100\%) &   @(rate 35\%)&  @(rate 35\%)  &@(rate 30\%) &@(rate 30\%) &  @(k\euro)\\ \hline \hline
-@Man Month ANR & 42 & 20& 20 &20  & 3 & 6 & 12 & 9 & \\ \hline
-@Staff (k\euro)   & 148 & 78& 78 & 78 & 17 & 34 & 44 & 45 & sum(b5:i5) \\ \hline
-@Equipment  (k\euro)   &  20 & 10 & 5 & 5  & & & & &sum(b6:i6) \\  \hline
-@Travel  (k\euro)    &  20 & 5 & 5 & 5 &5 & 5 & 5 & 5 & sum(b7:i7)\\  \hline
-@Management  (k\euro)    &  15 & 5 &5 & 5  & 5 & 5 & 5 & 5 & sum(b8:i8) \\
+ &@Insa-Lyon & @Centrale-Lyon  & @Grame &   @Total \\ 
+ & @Citi & @LMFA & & \\ 
+ & @(rate 100\%) & @(100\%) &   @(rate 100\%)(?) &  @(k\euro)\\ \hline \hline
+@Man Month ANR & 48 & 18  & 12 & \\ \hline
+@Staff (k\euro)   & 180 & 72 & 50 & sum(b5:d5) \\ \hline
+@Equipment  (k\euro)   &  5 &  10  & 10 &sum(b6:d6) \\  \hline
+@Travel  (k\euro)    &  20 & 50  &50  & sum(b7:d7)\\  \hline
+@Management  (k\euro)    &  5 & 5  & 15  & sum(b8:d8) \\
 \hline\hline
-@Total requested (k\euro)     & sum(b5:b8)  & sum(c5:c8)    & sum(d5:d8) & sum(e5:e8)& sum(f5:f8) & sum(g5:g8)& sum(h5:h8)& sum(i5:i8)& sum(j5:j8)  \\ \hline
+@Total requested (k\euro)     & sum(b5:b8)  & sum(c5:c8)    & sum(d5:d8)  & sum(e5:e8)  \\ \hline
 \end{spreadtab}
 
 \end{center}
@@ -295,7 +291,7 @@ Possibilities unveiled by these developments will impact a wide range of fields 
 \newpage
 \section{A enlever avant de soumettre: Taux de précarité (pas vérifié la formule 2018)}
 {Man month repartition per  partner }
-
+        
 \begin{spreadtab}{{tabular}{|c||p{2.4cm}|p{2cm}|p{2.7cm}|p{2.5cm}||p{1cm}|}}
 \hline
 @Institution &
@@ -308,21 +304,18 @@ Possibilities unveiled by these developments will impact a wide range of fields 
 @PhD thesis and internship &
 @Total
  \\ \hline \hline
-@Insa Citi 	& 36 	& 	&  24	& 18 & sum(b2:e2) \\
+@Insa Citi 	& 36 	& 	&  12	& 36 & sum(b2:e2) \\
 \hline
-@Centrale  	&  28	& 	&  24	&   36 & sum(b3:e3) \\
+@Centrale LMFA  	&  24	& 	&  18	&    & sum(b3:e3) \\
 \hline
-@Qinteq 	&  18	& 6  	&	& & sum(b4:e4) \\
-\hline
-@eVaderis 	&  18	& 6  	&	& & sum(b5:e5) \\
-\hline
-@Hager	&  18	& 6  	&	& & sum(b6:e6) \\
+@Grame	&  36	&   	& 12	&  & sum(b4:e4) \\
 \hline \hline 
-@Total 	&  sum(b2:b6)	&  sum(c2:c6)	& sum(d2:d6) & sum(e2:e6)  &  sum(b7:e7)\\
+@Total 	&  sum(b2:b4)	&  sum(c2:c4)	& sum(d2:d4) & sum(e2:e4)  &  sum(b7:e4)\\
 \hline
-\multicolumn{6}{|l|}{\em taux de précarité (<<d7>>/(<<b7>>+<<c7>>+<<d7>>)) :  :={round(d7/sum(b7:d7),3)}} \\
+\multicolumn{6}{|l|}{\em taux de précarité (<<d5>>/(<<b5>>+<<c5>>+<<d5>>)) :  :={round(d5/sum(b5:d5),3)}} \\
 \hline
 \end{spreadtab}
+
 
 
 \end{document}

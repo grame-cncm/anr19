@@ -10,8 +10,8 @@ SOURCE=$(NAME).tex
 all: $(PDF)  
 
 bib: $(SOURCE)
-	bibtex $(NAME)
 	pdflatex  $<
+	bibtex $(NAME)
 	pdflatex  $<
 
 %.pdf: %.tex
