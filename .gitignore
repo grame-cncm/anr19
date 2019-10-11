@@ -8,3 +8,5 @@ proposal/*.log
 proposal/*.out
 proposal/*.pdf
 proposal/*.synctex.gz
+proposal/*.soc
+proposal/*.loc
