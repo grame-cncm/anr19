@@ -27,26 +27,26 @@
 \usepackage{boxedminipage}
 \usepackage{spreadtab}
 
-% \makeatletter
-% 
-% \usepackage{comment}
-% \let\wfs@comment@comment\comment
-% \let\comment\@undefined
-% 
-% \usepackage[todonotes={textsize=scriptsize}]{changes}
-% % uncomment to apply changes
-% %\usepackage[final]{changes}
-% \let\wfs@changes@comment\comment
-% \let\comment\@undefined
-% 
-% \newcommand\comment{%
-% 	\ifthenelse{\equal{\@currenvir}{comment}}
-% 	{\wfs@comment@comment}
-% 	{\wfs@changes@comment}%
-% }
-% 
-% \makeatother
-% \definechangesauthor[name=Pierre Lecomte, color=purple]{PL}
+ \makeatletter
+ 
+ \usepackage{comment}
+ \let\wfs@comment@comment\comment
+ \let\comment\@undefined
+ 
+ \usepackage[todonotes={textsize=scriptsize}]{changes}
+ % uncomment to apply changes
+ %\usepackage[final]{changes}
+ \let\wfs@changes@comment\comment
+ \let\comment\@undefined
+ 
+ \newcommand\comment{%
+ 	\ifthenelse{\equal{\@currenvir}{comment}}
+ 	{\wfs@comment@comment}
+ 	{\wfs@changes@comment}%
+ }
+ 
+ \makeatother
+ \definechangesauthor[name=Pierre Lecomte, color=purple]{PL}
 
 %for added text:
 %\added[id=<id>, comment=<comment>]{<new text>}
@@ -171,13 +171,13 @@
 {\color{ANRblue}\theparagraph}{1em}{}
 
 \newcommand{\F}{\textsc{Faust}}
-\newcommand{\PP}{FULLAP} 
+\newcommand{\PP}{FAST} 
 
 %titre, acronyme, défi, instrument
 \newcommand{\myacro}[0]{\PP}
-\newcommand{\mytitle}[0]{\myacro: \\ Fast Ultra Low Latency Audio Processing}
+\newcommand{\mytitle}[0]{\myacro: \\ Fast Audio Signal-processing Technologies}
 \newcommand{\projectname}[0]{\PP}
-\newcommand{\mydomain}[0]{``Sciences du numérique''}
+\newcommand{\mydomain}[0]{transversaux}
 \newcommand{\myinstrument}[0]{PRC}
 \author{Coordinator: Romain Michon\\
 \small GRAME-CNCM, Lyon.
@@ -199,8 +199,8 @@
 
 
 \title{\vspace{-\baselineskip}\mytitle}
-\date{Domaine ``Sciences du numérique''\\
-Axe 5.4 -- Réseaux de communication multi-usages, infrastructures de hautes performances, Sciences et technologies logicielles}
+\date{Domaine transversaux\\
+Axe 8.6. Révolution numérique : rapports au savoir et à la culture}
 
 \newcommand{\content}[1]{\emph{#1}\\} 
 
@@ -214,8 +214,8 @@ Axe 5.4 -- Réseaux de communication multi-usages, infrastructures de hautes per
 %\section{Executive summary }
 \begin{tabular}{p{2.3cm} p{12.5cm}}
   \hline
-  \textbf{Keywords} & FPGA, Active Control, Artificial Room Acoustics, \F{}, Audio DSP \\\hline
-  \textbf{Domain} & Domaine ``Sciences du numérique,'' Axe 5.4 -- Réseaux de communication multi-usages, infrastructures de hautes performances, Sciences et technologies logicielles \\\hline
+  \textbf{Keywords} & FPGA, Active Control, Artificial Room Acoustics, \F{}, Audio DSP \added[id=PL]{, Digital Art, Computer Music}\\\hline
+  \textbf{Domain} & Domaine transversaux,'' Axe 5.4 -- Réseaux de communication multi-usages, infrastructures de hautes performances, Sciences et technologies logicielles \\\hline
 \end{tabular}
 
 \section*{Context, Position and Objectives of the Proposal}
@@ -226,6 +226,46 @@ Axe 5.4 -- Réseaux de communication multi-usages, infrastructures de hautes per
 % - présentation de la méthodologie utilisée pour atteindre les objectifs ; 
 % - démonstration du caractère novateur du projet, de son originalité tant du point de vue des objectifs que de la méthodologie ; 
 % - positionnement du projet par rapport aux enjeux de recherche de l’axe scientifique choisi.
+
+% Cet axe permet de soutenir des actions de recherche interdisciplinaires en lien avec les deux grands domaines « Sciences du numérique » et « Sciences humaines et sociales ». Les projets attendus entreront dans l’un des deux grands domaines :
+%• Humanités numériques :
+% - éducation et formation,
+% - création et partage des savoirs,
+% - arts, culture et patrimoine.
+%• Sciences sociales computationnelles
+%
+% Les projets seront portés par une équipe ou un partenariat interdisciplinaire, réunissant des chercheurs en sciences et technologies du numérique et des chercheurs en sciences humaines et sociales.
+%Les progrès visés peuvent concerner un seul champ disciplinaire (SHS ou STIC) s’ils mobilisent des concepts ou des outils issus d’avancées récentes de l’autre champ. Ces conditions explicitent un encouragement au dépôt de projets interdisciplinaires, indiquant en quoi et comment la co-construction d’objets de recherche communs, à l’interface des disciplines, permet de mieux formaliser des questionnements scientifiques et/ou contribuer au renouvellement des méthodologies. Cet axe ne concerne donc pas les projets qui mèneraient les deux types de recherche (SHS et STIC) dans deux séries disjointes de tâches.
+
+%Mots-clés associés : Scénarisation pédagogique, jeux sérieux et ludification, personnalisation et adaptation à l’apprenant, formation aux technologies numériques, littératie numérique, enseignement à distance, co-apprentissage, co-enseignement, école numérique et territoire connecté, environnement immersif (école, classe, outil), approches cognitives, sociologiques et anthropologique de l’apprentissage de/par le numérique, innovation pédagogique, numérique et transformation des pratiques de recherche et de savoir, accès aux publications et aux données de la recherche, crédibilité et vérification de l’information en ligne, éducation aux médias, analyse des discours et controverses, recours aux données massives et nouvelles capacités d’analyse, quantification de soi, sciences du comportement, humanités numériques, données ouvertes et données liées, approches numériques du patrimoine, patrimoine nativement numérique, modélisation des connaissances, accès à l’information, médiations culturelles et numérique, collections virtuelles, dispositifs immersifs et nomades, approche numérique de la création artistique, gouvernementalité numérique / algorithmique, démocratie et débats citoyens dans le contexte numérique, analyse des politiques publiques via l’ouverture des données, sciences sociales computationnelles.
+
+% Mots-clés à placer :
+% environnement immersif
+% innovation numérique
+% dispositifs immersifs et nomades
+% approche numérique de la création artistique
+
+
+\added[id=PL, comment={J'essai un petit texte d'intro pour situer le contexte du projet, introduire le verrou scientifique et les objectifs pour le lever, à retravailler si besoin, évidemment.}]{
+%Audio Digital Signal Processing (DSP) is used everywhere in nowadays life, in a multitude of embedded systems (TV, cars, speakers, smartphone, tablets, etc.) It is an intrinsic part of the digital revolution in our modern societies.
+In the art and culture sectors, embedded systems for audio and multimedia are increasingly used (interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.) However, the programming and realization of such systems are still difficult for artists, creators or engineers not deticated to software/hardware implementation. 
+Over the past decade, progress has been made to facilitate this implementation, offering more flexibility in digital approaches to artistic creation. For instance, the Arduinos platforms %\footnote{\url{https://www.arduino.cc}}
+have opened the doors to a wide range of user for the easy microprocessor programming. As well, Dedicated Software Langage (DSL) like Faust\cite{Orlarey2009} have facilitated the real-time Audio Digital Signal Processing (DSP) implementations.	
+But many limitations remain with microcontroller-based approaches, especially for real-time applications where latency plays a crucial role (e.g. active control of sound \cite{elliott2000signal}, digital instruments playability \cite{Lago2004}, digital audio effects, etc.).
+In fact, audio processing latency can be reduced on ``standard'' computing platforms (i.e., personal computers based on CPUs (Central Processing Unit) by using dedicated hardware (i.e., audio interfaces, etc.) and software (i.e., low-latency Linux kernels, etc.) solutions, but, buffering remains a limiting factor and going under the ``one millisecond threshold'' (which corresponds to a distance of about 35cm in the air) is usually impossible.
+That is where FPGA (Field Programmable Gate Arrays) can help this field to a new level. Unlike microcontrollers, these hardware chips are known for their high computational capabilities \cite{Choi2013,Pfeifle2012} and very low-latency performances \cite{Verstraelen2014}.
+}
+They start to appear for real-time audio DSP applications, both in the industry (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} etc.) and in academia. %Similarly, FPGA-based boards specifically targeting audio applications such as Dada Machines' Doppler\footnote{\url{https://dadamachines.com/product/doppler}} are starting to appear.
+Another advantage of FPGAs is their large number of GPIOs (General Purpose Inputs and Outputs). This feature can be exploited to implement modern multi-channel processing algorithms, a task that is difficult to carry out otherwise. Examples of such algorithms/applications include: 
+\begin{itemize}
+	\itemsep0em
+	\item precise measurement and characterization of sound fields using a very large number of digital microphones \cite{salze2019new}, 
+	\item active sound control over a large region of space where additional loudspeakers are involved \cite{Zhang2018}, etc.
+\end{itemize}
+
+Therefore, FPGA-based solutions seem suitable for a very large number of artistic and cultural applications in the era of the digital revolution, but at the moment it is totally inaccessible to this whole community because FPGAs are as well famous for their very complex programming.
+
+In this context, the FAST project is designed to overcome the difficulties mentioned above (i.e. low latency, computing capacity, ease of programming) and offer the greatest number of people, particularly artists and musicians, the opportunity of bringing to the real world their creations.
 
 The goal of \PP{} is to design an FPGA (Field Programmable Gate Array) based platform for multichannel ultra-low-latency audio Digital Signal Processing (DSP) programmable at high-level and usable for various applications ranging from sound synthesis and processing to acoustics active control and artificial sound field/room acoustics.  This type of chip is notorious to be hard to program. This is why a major contribution of the project will be a high-level programming tool to facilitate this task and make it accessible to a wider range of users, like Arduinos\footnote{\url{https://www.arduino.cc}} facilitated the programming of microcontrollers. In addition to that, we then plan to use this tool to: 
 
