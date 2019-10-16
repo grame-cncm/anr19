@@ -245,27 +245,27 @@ Axe 8.6. Révolution numérique : rapports au savoir et à la culture}
 % dispositifs immersifs et nomades
 % approche numérique de la création artistique
 
+\added[id=PL, comment={J'essaie un petit texte d'intro pour situer le contexte du projet, introduire le verrou scientifique et les objectifs pour le lever, à retravailler si besoin, évidemment.}]{
 
-\added[id=PL, comment={J'essai un petit texte d'intro pour situer le contexte du projet, introduire le verrou scientifique et les objectifs pour le lever, à retravailler si besoin, évidemment.}]{
-%Audio Digital Signal Processing (DSP) is used everywhere in nowadays life, in a multitude of embedded systems (TV, cars, speakers, smartphone, tablets, etc.) It is an intrinsic part of the digital revolution in our modern societies.
-In the art and culture sectors, embedded systems for audio and multimedia are increasingly used (interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.) However, the programming and realization of such systems are still difficult for artists, creators or engineers not deticated to software/hardware implementation. 
-Over the past decade, progress has been made to facilitate this implementation, offering more flexibility in digital approaches to artistic creation. For instance, the Arduinos platforms %\footnote{\url{https://www.arduino.cc}}
-have opened the doors to a wide range of user for the easy microprocessor programming. As well, Dedicated Software Langage (DSL) like Faust\cite{Orlarey2009} have facilitated the real-time Audio Digital Signal Processing (DSP) implementations.	
-But many limitations remain with microcontroller-based approaches, especially for real-time applications where latency plays a crucial role (e.g. active control of sound \cite{elliott2000signal}, digital instruments playability \cite{Lago2004}, digital audio effects, etc.).
-In fact, audio processing latency can be reduced on ``standard'' computing platforms (i.e., personal computers based on CPUs (Central Processing Unit) by using dedicated hardware (i.e., audio interfaces, etc.) and software (i.e., low-latency Linux kernels, etc.) solutions, but, buffering remains a limiting factor and going under the ``one millisecond threshold'' (which corresponds to a distance of about 35cm in the air) is usually impossible.
-That is where FPGA (Field Programmable Gate Arrays) can help this field to a new level. Unlike microcontrollers, these hardware chips are known for their high computational capabilities \cite{Choi2013,Pfeifle2012} and very low-latency performances \cite{Verstraelen2014}.
-}
-They start to appear for real-time audio DSP applications, both in the industry (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} etc.) and in academia. %Similarly, FPGA-based boards specifically targeting audio applications such as Dada Machines' Doppler\footnote{\url{https://dadamachines.com/product/doppler}} are starting to appear.
-Another advantage of FPGAs is their large number of GPIOs (General Purpose Inputs and Outputs). This feature can be exploited to implement modern multi-channel processing algorithms, a task that is difficult to carry out otherwise. Examples of such algorithms/applications include: 
-\begin{itemize}
-	\itemsep0em
-	\item precise measurement and characterization of sound fields using a very large number of digital microphones \cite{salze2019new}, 
-	\item active sound control over a large region of space where additional loudspeakers are involved \cite{Zhang2018}, etc.
-\end{itemize}
+In the art and culture sectors, embedded systems for audio and multimedia are increasingly used (interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.).
+However, the programming and realization of such systems remain difficult for artists, creators or engineers not deticated to software/hardware implementation. }
+\added[id=PL, comment={Faut mettre du SHS, du potentiel d'impact sociétal, blabla ahah}]{
+Over the past decade, progress have been made to facilitate the implementation, which has accompanied the ``maker culture''} \footnote{\url{https://en.wikipedia.org/wiki/Maker_culture}}
+\added[id=PL, comment={Je replace des mots clés de la description de l'axe}]{and has offered more flexibility in digital approaches to artistic creation. 
+For instance, the Arduinos platforms} \footnote{\url{https://www.arduino.cc}}
+\added[id=PL]{
+have opened the doors to a wide range of user,  for the easy microprocessor programming. As well, Dedicated Software Langage (DSL) like Faust\cite{Orlarey2009} have facilitated the real-time Audio Digital Signal Processing (DSP) implementations.
 
-Therefore, FPGA-based solutions seem suitable for a very large number of artistic and cultural applications in the era of the digital revolution, but at the moment it is totally inaccessible to this whole community because FPGAs are as well famous for their very complex programming.
+But many limitations remain despite the ease of programming, especially for real-time applications where latency plays a crucial role (e.g. efficient active control of sound where the audio processing should be faster than the sound propagation \cite{elliott2000signal}, digital instruments playability \cite{Lago2004}, digital audio effects, etc.).
+In fact, on ``standard'' computing platforms (i.e., personal computers based on CPUs (Central Processing Unit), audio interfaces, Arduinos, etc.) latency can possibly be reduced, but going under the ``one millisecond threshold'' is usually impossible. This is due to the fact that these platforms use buffers  that condition latency.
 
-In this context, the FAST project is designed to overcome the difficulties mentioned above (i.e. low latency, computing capacity, ease of programming) and offer the greatest number of people, particularly artists and musicians, the opportunity of bringing to the real world their creations.
+
+That is where FPGA (Field Programmable Gate Arrays) can help this problematic to a new level. Unlike microcontrollers, these chips are known for their high computational capabilities \cite{Choi2013,Pfeifle2012} and very low-latency performances \cite{Verstraelen2014}.
+%They start appearing for real-time audio DSP applications (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} etc.).
+As well, they usually provide a large number of GPIOs (General Purpose Inputs and Outputs) which can be exploited to implement modern real-time multi-channel processing algorithms (e.g. sound fields capture using a very large number of digital microphones \cite{salze2019new}, active sound control over a large spatial region \cite{Zhang2018}).
+Therefore, on paper, FPGA-based solutions seem to be the answer for numerous applications in musical, artistics and cultural context. But, at the moment, this remais an illusion as FPGA programming is known to be very complex and consequently is totally inaccessible to non-hardware-engineers communities.
+
+In this context, the FAST project was thought to overcome the aforementioned difficulties (i.e. low latency, computing capacity, ease of programming) and offer to the many the opportunity of easily implement into the real world their creations.}
 
 The goal of \PP{} is to design an FPGA (Field Programmable Gate Array) based platform for multichannel ultra-low-latency audio Digital Signal Processing (DSP) programmable at high-level and usable for various applications ranging from sound synthesis and processing to acoustics active control and artificial sound field/room acoustics.  This type of chip is notorious to be hard to program. This is why a major contribution of the project will be a high-level programming tool to facilitate this task and make it accessible to a wider range of users, like Arduinos\footnote{\url{https://www.arduino.cc}} facilitated the programming of microcontrollers. In addition to that, we then plan to use this tool to: 
 
