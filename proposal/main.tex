@@ -27,26 +27,26 @@
 \usepackage{boxedminipage}
 \usepackage{spreadtab}
 
- \makeatletter
- 
- \usepackage{comment}
- \let\wfs@comment@comment\comment
- \let\comment\@undefined
- 
- \usepackage[todonotes={textsize=scriptsize}]{changes}
- % uncomment to apply changes
- %\usepackage[final]{changes}
- \let\wfs@changes@comment\comment
- \let\comment\@undefined
- 
- \newcommand\comment{%
- 	\ifthenelse{\equal{\@currenvir}{comment}}
- 	{\wfs@comment@comment}
- 	{\wfs@changes@comment}%
- }
- 
- \makeatother
- \definechangesauthor[name=Pierre Lecomte, color=purple]{PL}
+ % \makeatletter
+ % 
+ % \usepackage{comment}
+ % \let\wfs@comment@comment\comment
+ % \let\comment\@undefined
+ % 
+ % \usepackage[todonotes={textsize=scriptsize}]{changes}
+ % % uncomment to apply changes
+ % %\usepackage[final]{changes}
+ % \let\wfs@changes@comment\comment
+ % \let\comment\@undefined
+ % 
+ % \newcommand\comment{%
+ % 	\ifthenelse{\equal{\@currenvir}{comment}}
+ % 	{\wfs@comment@comment}
+ % 	{\wfs@changes@comment}%
+ % }
+ % 
+ % \makeatother
+ % \definechangesauthor[name=Pierre Lecomte, color=purple]{PL}
 
 %for added text:
 %\added[id=<id>, comment=<comment>]{<new text>}
@@ -214,8 +214,8 @@ Axe 8.6. Révolution numérique : rapports au savoir et à la culture}
 %\section{Executive summary }
 \begin{tabular}{p{2.3cm} p{12.5cm}}
   \hline
-  \textbf{Keywords} & FPGA, Active Control, Artificial Room Acoustics, \F{}, Audio DSP \added[id=PL]{, Digital Art, Computer Music}\\\hline
-  \textbf{Domain} & Domaine transversaux,'' Axe 5.4 -- Réseaux de communication multi-usages, infrastructures de hautes performances, Sciences et technologies logicielles \\\hline
+  \textbf{Keywords} & FPGA, Active Control, Artificial Room Acoustics, \F{}, Audio DSP, Digital Art, Computer Music\\\hline
+  \textbf{Domain} & Domaine transversaux, Axe 8.6 -- Révolution numérique : rapports au savoir et à la culture \\\hline
 \end{tabular}
 
 \section*{Context, Position and Objectives of the Proposal}
@@ -245,30 +245,18 @@ Axe 8.6. Révolution numérique : rapports au savoir et à la culture}
 % dispositifs immersifs et nomades
 % approche numérique de la création artistique
 
-\added[id=PL, comment={J'essaie un petit texte d'intro pour situer le contexte du projet, introduire le verrou scientifique et les objectifs pour le lever, à retravailler si besoin, évidemment.}]{
+Embedded systems for audio and multimedia are increasingly used in the arts and culture sector (e.g., interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.). However, programming this type of platform can be out of reach to artists, creators, or non-specialized engineers. In parallel with the development of the ``maker culture,''\footnote{\url{https://makerfaire.com/maker-movement}} progress have been made to make these systems more accessible, bringing more flexibility in digital approaches to artistic creation. For instance, the Arduino platform\footnote{\url{https://www.arduino.cc}} greatly simplified the programming process of microcrontrollers, making this type of chip accessible to a wide range of users. 
+Similarly, Domain Specific programming Langages (DSL) such as \F{}\footnote{\F{} is a DSL for real-time audio signal processing primarily developed at GRAME-CNCM and by a worldwide community. \F{} is based on a compiler ``translating'' DSP specifications written in \F{} into a wide range of lower-level languages (e.g., C, C++, Rust, Java, WASM, LLVM bitcode, etc.). Thanks to its ``architecture'' system, generated DSP objects can be embedded into template programs (wrappers) used to turn a \F{} program into a specific ready-to-use object (e.g., standalone, plug-in, smartphone app, webpage, etc.). } 
+\cite{Orlarey2009} facilitated the implementation of real-time audio Digital Signal Processing (DSP) algorithms. % TODO: not sure if that's the right place for this: seems out of context
 
-In the art and culture sectors, embedded systems for audio and multimedia are increasingly used (interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.).
-However, the programming and realization of such systems remain difficult for artists, creators or engineers not deticated to software/hardware implementation. }
-\added[id=PL, comment={Faut mettre du SHS, du potentiel d'impact sociétal, blabla ahah}]{
-Over the past decade, progress have been made to facilitate the implementation, which has accompanied the ``maker culture''} \footnote{\url{https://en.wikipedia.org/wiki/Maker_culture}}
-\added[id=PL, comment={Je replace des mots clés de la description de l'axe}]{and has offered more flexibility in digital approaches to artistic creation. 
-For instance, the Arduinos platforms} \footnote{\url{https://www.arduino.cc}}
-\added[id=PL]{
-have opened the doors to a wide range of user,  for the easy microprocessor programming. As well, Dedicated Software Langage (DSL) like Faust\cite{Orlarey2009} have facilitated the real-time Audio Digital Signal Processing (DSP) implementations.
+However, many limitations remain, especially for real-time applications where latency plays a crucial role (e.g. efficient active control of sound where audio processing should be faster than the propagation of sound \cite{elliott2000signal}, Digital Musical Instruments (DMIs) playability \cite{Lago2004}, digital audio effects, etc.). While latency can be potentially reduced on ``standard'' computing platforms such as personal computers based on a CPU (Central Processing Unit), going under the ``one millisecond threshold'' is usually impossible because of buffering.
 
-But many limitations remain despite the ease of programming, especially for real-time applications where latency plays a crucial role (e.g. efficient active control of sound where the audio processing should be faster than the sound propagation \cite{elliott2000signal}, digital instruments playability \cite{Lago2004}, digital audio effects, etc.).
-In fact, on ``standard'' computing platforms (i.e., personal computers based on CPUs (Central Processing Unit), audio interfaces, Arduinos, etc.) latency can possibly be reduced, but going under the ``one millisecond threshold'' is usually impossible. This is due to the fact that these platforms use buffers  that condition latency.
+FPGAs (Field Programmable Gate Arrays)\footnote{FPGAs are configured/programmed using a Hardware Description Language (HDL) such as VHDL or Verilog. The learning curve and the electrical engineering skills required to master these types of environments make them out of reach to the real-time audio DSP community. Solutions exist to program FPGAs at a higher level (i.e., LabVIEW: \url{https://www.ni.com/fr-fr/shop/labview.html}, Vivado HLS: \url{https://www.xilinx.com/HLS}, etc.), but none of them is specifically dedicated nor adapted to real-time audio DSP.} 
+can help solve this problem. These chips are known for their high computational capabilities \cite{Choi2013,Pfeifle2012} and very low-latency performances \cite{Verstraelen2014}. They also provide a large number of GPIOs (General Purpose Inputs and Outputs) which can be exploited to implement modern real-time multi-channel processing algorithms (e.g. sound fields capture using a very large number of digital microphones \cite{salze2019new}, active sound control over a large spatial region \cite{Zhang2018}, etc.). 
 
-That is where FPGA (Field Programmable Gate Arrays) can help this problematic to a new level. Unlike microcontrollers, these chips are known for their high computational capabilities \cite{Choi2013,Pfeifle2012} and very low-latency performances \cite{Verstraelen2014}.
+In theory, FPGAs can solve most of the limitations of traditional computing platforms used in musical, artistic and cultural contexts. In practice, this remains an illusion as FPGA programming is known to be extremely complex and consequently totally inaccessible to non-hardware-engineers communities. There are currently only a few examples of FPGA-based real-time audio DSP systems (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} etc.) and in these applications, FPGAs are dedicated to a specific tasks, limiting creativity and flexibility.
 
-As well, they usually provide a large number of GPIOs (General Purpose Inputs and Outputs) which can be exploited to implement modern real-time multi-channel processing algorithms (e.g. sound fields capture using a very large number of digital microphones \cite{salze2019new}, active sound control over a large spatial region \cite{Zhang2018}).
-Therefore, on paper, FPGA-based solutions seem to be the answer for numerous applications in musical, artistics and cultural context. But, at the moment, this remais an illusion as FPGA programming is known to be very complex and consequently is totally inaccessible to non-hardware-engineers communities.}
-There are currently only a few examples of FPGAs used for real-time audio DSP (i.e., Antelope Audio, \footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}}) and in these applications, FPGAs are dedicated to a specific tasks, limiting the creativity and flexibility.
-
-\added[id=PL]{
-In this context, the FAST project was thought to overcome the aforementioned difficulties (i.e. low latency, computing capacity, multi-channel, ease of programming) and offer to the many the opportunity of easily implement into the real world their creations.}
-
-The goal of \PP{} is to design an FPGA (Field Programmable Gate Array) based platform for multichannel ultra-low-latency audio Digital Signal Processing (DSP) programmable at high-level with \F{} language and usable for various applications ranging from sound synthesis and processing to active sound control and artificial sound field/room acoustics. In addition to that, we then plan to use this tool to: 
+The \PP{} project was thought to overcome the aforementioned difficulties (i.e. low latency, computing capacity, multi-channel, and ease of programming). The goal of \PP{} is to design an FPGA-based platform for multichannel ultra-low-latency audio Digital Signal Processing (DSP) programmable at high-level with \F{} and usable for various applications ranging from sound synthesis and processing to active sound control and artificial sound field/room acoustics. In addition to that, we then plan to use this tool to: 
 
 \begin{itemize}
   \itemsep0em
@@ -276,17 +264,10 @@ The goal of \PP{} is to design an FPGA (Field Programmable Gate Array) based pla
   \item create a system to actively modify the acoustics of a concert hall to make it ``modular,''
   \item actively modify the acoustical properties of acoustic musical instruments. 
 \end{itemize}
-\PP{} will gather the strengths of GRAME-CNCM\footnote{\url{http://grame.fr}} (\F{}, compilation, musical audio applications, dissemination/mediation, professional music production), CITI\footnote{\url{http://www.citi-lab.fr}} at INSA Lyon (FPGA, DSP, fixed-point processing with FloPoCo\footnote{\url{http://flopoco.gforge.inria.fr}}), and LMFA\footnote{\url{http://lmfa.ec-lyon.fr}} at École Centrale de Lyon (acoustics, DSP, artificial reverberation, active control).
 
-\paragraph{More details on FPGAs}
-FPGAs are configured/programmed using a Hardware Description Language (HDL) such as VHDL or Verilog. The learning curve and the electrical engineering skills required to master these types of environments make them out of reach to the real-time audio DSP community. Solutions exist to program FPGAs at a higher level (i.e., LabVIEW,\footnote{\url{https://www.ni.com/fr-fr/shop/labview.html}} Vivado HLS,\footnote{\url{https://www.xilinx.com/HLS}} etc.), but none of them is specifically dedicated nor adapted to real-time audio DSP. 
+\PP{} will gather the strengths of GRAME-CNCM\footnote{\url{http://grame.fr}} (\F{}, compilation, musical audio applications, dissemination / mediation, professional music production), CITI\footnote{\url{http://www.citi-lab.fr}} at INSA Lyon (FPGA, DSP, fixed-point processing with FloPoCo\footnote{\url{http://flopoco.gforge.inria.fr}}), and LMFA\footnote{\url{http://lmfa.ec-lyon.fr}} at École Centrale de Lyon (acoustics, DSP, artificial reverberation, active control). 
 
-\paragraph{More details on \F{}}
-\F{} \cite{Orlarey2009} is a Domain Specific Language (DSL) for real-time audio signal processing primarily developed at GRAME-CNCM and by a worldwide community. \F{} is based on a compiler ``translating'' DSP specifications written in \F{} into a wide range of lower-level languages (e.g., C, C++, Rust, Java, WASM, LLVM bitcode, etc.). Thanks to its ``architecture'' system, generated DSP objects can be embedded into template programs (wrappers) used to turn a \F{} program into a specific ready-to-use object (e.g., standalone, plug-in, smartphone app, webpage, etc.). 
-
-
-Another goal of \PP{} is to \textbf{develop a new \F{} architecture back-end for FPGA-based platforms}.
-One of the challenges here is the  optimization of the \highlight[id=PL, comment={Définition de l'acronyme}]{IP} generated by \F{}. In particular, fixed-point support in the code generated by the \F{} compiler should be implemented, building on the expertise developed at CITI around the FloPoCo project. Eventually, we aim at generating VHDL code directly from the \F{} compiler. 
+Another goal of \PP{} is to \textbf{develop a new \F{} architecture back-end for FPGA-based platforms}. One of the challenges here is the optimization of the module generated by \F{}. In particular, fixed-point support in the code generated by the \F{} compiler should be implemented, building on the expertise developed at CITI around the FloPoCo project. Eventually, we aim at generating VHDL code directly from the \F{} compiler. 
 
 % F2D Je pense qu'il faut mettre en gras ci-dessous 
 This type of system has a wide range of applications in multiple domains. As mentioned earlier, music technology is in high demand for low latency because it helps increasing the playability of musical instruments on stage. Hence, the platform developed as part of \PP{} will be used to design programmable digital musical instruments and effect processors. In that context, the computational power of the FPGA will be exploited to run complex algorithms (e.g., physics-based models of musical instruments, modal reverbs \cite{Abel2009}, etc.) that are too costly to run on a traditional platform (i.e., laptop, etc.). GRAME-CNCM has decades of experience in that domain. We plan to \textbf{implement a sound synthesis/processor module based on the platform} implemented in \PP{}.
@@ -299,10 +280,9 @@ Finally, applications around active control are not limited to acoustical spaces
 
 The project will be led by Romain Michon (GRAME-CNCM, Lyon, France // CCRMA,\footnote{\url{https://ccmra.stanford.edu}} Stanford University, USA). GRAME is a ``Centre National de Création Musicale'' (CNCM) organized in three departments: music production, transmission/mediation, and computer musirc research. GRAME's research department has been leading the development of the \F{} programming language since its creation in 2004. It has expertise in computer science (compilation), audio DSP, digital lutherie, and HCI (Human Computer Interaction) in general. Thanks to the proximity of all three departments at GRAME, research outcomes can easily find their way to professional musical productions and be shared with a general public through the organization of workshops and tight collaborations with the French ministry of education. Hence, the planning of concerts and outreach events around scientific culture leveraging the technology and research outcomes of \PP{} will be facilitated by GRAME's general structure and strike force. Romain Michon has been working on \F{}, digital lutherie, and embedded systems for real-time audio applications for many years. Yann Orlarey who's the father of \F{} and GRAME's scientific director will participate in the project as well. Similarly, Stéphane Letz who's a researcher at GRAME and one of the main developer of \F{} will join the team. 
 
-The two other academic partners of the project will be INSA-Lyon through  the CITI laboratory (Center of Innovation in Telecommunications and Integration of Service) and Ecole-Centrale-Lyon through LMFA laboratory (Laboratoire de Mécanique des Fluides et d'Acoustique). Citi lab will provide important skills about FPGA, high level synthesis and arithmetics operator implementations. Tanguy Risset, Professor at INSA-Lyon,  has been working for many years on HLS for FPGA (working on the Alpha langage) before launching the creation of successively two Inria team-projects related to embedded systems (Compsys and Socrate). Florent de Dinechin, professor at INSA-Lyon, is one of the world specialist of arithmetic operators implementation on FPGA, he is also the creator of the FloPoCo tool that will be used in the project.  His expertise will be an unique opportunity to provide optimal  FPGA designs.
-\added[id=PL]{LMFA is a lab with leading expertise in acoustics, fluid mechanics and active sound control. It disposes of unique experimental facilities (anechoic rooms, wind tunnels, sound field synthesis rooms) which can be put at disposal for the experimental work of this proposal. Pierre Lecomte, associate professor, has been working on sound field capture, control and synthesis using loudspeakers and digital microphone arrays. He authored a plugin-suite developped in \F{} for real-time sound field synthesis.} \footnote{\url{www.sekisushai.net/ambitools}}
-\added[id=PL]{. Marie-Annick Galland, Professor at École-Centrale Lyon, has been working on active noise/sound controls and supervised several PhD on the topic.
-Sébastien Ollivier, associate professor, has been working on physical modelling of musical instruments.}
+The two other academic partners of the project will be INSA-Lyon through  the CITI laboratory (Center of Innovation in Telecommunications and Integration of Service) and Ecole-Centrale-Lyon through LMFA laboratory (Laboratoire de Mécanique des Fluides et d'Acoustique). Citi lab will provide important skills about FPGA, high level synthesis and arithmetics operator implementations. Tanguy Risset, Professor at INSA-Lyon,  has been working for many years on HLS for FPGA (working on the Alpha langage) before launching the creation of successively two Inria team-projects related to embedded systems (Compsys and Socrate). Florent de Dinechin, professor at INSA-Lyon, is one of the world specialist of arithmetic operators implementation on FPGA, he is also the creator of the FloPoCo tool that will be used in the project.  His expertise will be an unique opportunity to provide optimal  FPGA designs. LMFA is a lab with leading expertise in acoustics, fluid mechanics and active sound control. It disposes of unique experimental facilities (anechoic rooms, wind tunnels, sound field synthesis rooms) which can be put at disposal for the experimental work of this proposal. Pierre Lecomte, associate professor, has been working on sound field capture, control and synthesis using loudspeakers and digital microphone arrays. He authored a plugin-suite developped in \F{} for real-time sound field synthesis. \footnote{\url{www.sekisushai.net/ambitools}} Marie-Annick Galland, Professor at École-Centrale Lyon, has been working on active noise/sound controls and supervised several PhD on the topic.
+Sébastien Ollivier, associate professor, has been working on physical modelling of musical instruments.
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=\columnwidth]{img/wp}
