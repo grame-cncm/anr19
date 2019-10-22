@@ -283,11 +283,12 @@ Finally, applications around active control are not limited to acoustical spaces
 
 The project will be led by Romain Michon (GRAME-CNCM, Lyon, France // CCRMA, Stanford University, USA). GRAME is a ``Centre National de Création Musicale'' (CNCM) organized in three departments: music production, transmission/mediation, and computer music research. GRAME's research department has been leading the development of the \F{} programming language since its creation in 2004. It has expertise in computer science (compilation), audio DSP, digital lutherie, and HCI (Human Computer Interaction) in general. Thanks to the proximity of all three departments at GRAME, research outcomes can easily find their way to professional musical productions and be shared with a general public through the organization of workshops and tight collaborations with the French ministry of education. Hence, the planning of concerts and outreach events around scientific culture leveraging the technology and research outcomes of \PP{} will be facilitated by GRAME's general structure and strike force. Romain Michon has been working on \F{}, digital lutherie, and embedded systems for real-time audio applications for many years. Yann Orlarey who's the father of \F{} and GRAME's scientific director will participate in the project as well. Similarly, Stéphane Letz who's a researcher at GRAME and one of the main developer of \F{} will join the team. 
 
-The two other academic partners of the project will be INSA-Lyon through  the CITI laboratory (Center of Innovation in Telecommunications and Integration of Service) and Ecole-Centrale-Lyon through LMFA laboratory (Laboratoire de Mécanique des Fluides et d'Acoustique). Citi lab will provide important skills about FPGA, high level synthesis and arithmetics operator implementations. Tanguy Risset (professor at INSA-Lyon) has been working for many years on HLS for FPGA (working on the Alpha langage) before successively launching the creation of two Inria team-projects related to embedded systems (Compsys and Socrate). Florent de Dinechin (professor at INSA-Lyon) is one of the world specialist of arithmetic operators implementation on FPGA, he is also the creator of the FloPoCo tool that will be used in the project.  His expertise will be a unique opportunity to provide optimal FPGA designs. LMFA is a lab with leading expertise in acoustics, fluid mechanics and active sound control. It hosts unique experimental facilities (i.e., anechoic rooms, wind tunnels, sound field synthesis rooms) which will be used for the experimental work of this proposal. Pierre Lecomte (associate professor at École-Centrale Lyon) has been working on sound field capture, control and synthesis using loudspeakers and digital microphone arrays. He authored a plugin-suite developped in \F{} for real-time sound field synthesis. \footnote{\url{https://www.sekisushai.net/ambitools}} Marie-Annick Galland (professor at École-Centrale Lyon) has been working on active noise/sound controls and supervised several PhD on the topic. Sébastien Ollivier (associate professor at École-Centrale Lyon) has been working on physical modeling of musical instruments.
+The two other academic partners of the project will be INSA-Lyon through  the CITI laboratory (Center of Innovation in Telecommunications and Integration of Service) and Ecole-Centrale-Lyon through LMFA laboratory (Laboratoire de Mécanique des Fluides et d'Acoustique). Citi lab will provide important skills about FPGA, high level synthesis and arithmetics operator implementations. Tanguy Risset (professor at INSA-Lyon) has been working for many years on HLS for FPGA (working on the Alpha langage) before successively launching the creation of two Inria team-projects related to embedded systems (Compsys and Socrate). Florent de Dinechin (professor at INSA-Lyon) is one of the world specialist of arithmetic operators implementation on FPGA, he is also the creator of the FloPoCo tool that will be used in the project.  His expertise will be a unique opportunity to provide optimal FPGA designs. LMFA is a lab with leading expertise in acoustics, fluid mechanics and active sound control. It hosts unique experimental facilities (i.e., anechoic rooms, wind tunnels, sound field synthesis rooms) which will be used for the experimental work of this proposal. Pierre Lecomte (associate professor at École-Centrale Lyon) has been working on sound field capture, control and synthesis using loudspeakers and digital microphone arrays. He authored a plugin-suite developped in \F{} for real-time sound field synthesis.\footnote{\url{https://www.sekisushai.net/ambitools}} Marie-Annick Galland (professor at École-Centrale Lyon) has been working on active noise/sound controls and supervised several PhD on the topic. Sébastien Ollivier (associate professor at École-Centrale Lyon) has been working on physical modeling of musical instruments.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=\columnwidth]{img/wp}
+	\vspace{-1cm}
   \caption{\PP{} project organization and planning.}
   \label{fig:wp}
 \end{figure}
@@ -299,7 +300,7 @@ Finally, \textit{WP5} will happen in two stages. First, the platform developed i
 
 \paragraph{Human Resources}
 
-In addition to the permanent lab members working on the project, one PhD thesis, one postdoc of a year and a half, two 6 months Masters level internships, and one man-year of advanced engineer are foreseen (see Figure~\ref{fig:wp}). The PhD will be dedicated to modify the \F{} compiler to generate efficient FPGA IPs for real-time audio signal processing applications. One of the main challenge will be related to adding fixed-point support to the code generated by \F{} through the use of FloPoCo. The man-year of engineer at CITI will be centered around the development of the FPGA-based multichannel audio signal processor hardware platform that will be used during the next steps of the project. The masters internship at LMFA will consist in using the tools developed during the first year and half of the project to implement a multichannel artificial reverberation system in the LMFA's sound spatialization system. This will serve as a prototype for a larger system that could be used in concert halls in the framework of professional music productions. The Masters internship at GRAME-CNCM will imply the development of an audio effect/sound synthesizer module based on the platform developed in the previous steps of the project and programmable at a high level in \F{}. The postdoc at LMFA/GRAME-CNCM will focus on using the platform developed in the previous steps in the context of active control of room acoustics, digital lutherie, and other fields related to audio/acoustics. He will also set and conduct perceptual experiments with professional musicians/performers to evaluate/validate the systems he will design. 
+In addition to the permanent lab members working on the project, one PhD thesis, one postdoc of a year and a half, two 6 months Masters level internships, and one man-year of advanced engineer are foreseen (see Figure~\ref{fig:wp}). The PhD will be dedicated to modify the \F{} compiler to generate efficient FPGA IPs for real-time audio signal processing applications. One of the main challenge will be related to adding fixed-point support to the code generated by \F{} through the use of FloPoCo. The man-year of engineer at GRAME-CNCM will be centered around the development of the FPGA-based multichannel audio signal processor hardware platform that will be used during the next steps of the project. The masters internship at LMFA will consist in using the tools developed during the first year and half of the project to implement a multichannel artificial reverberation system in the LMFA's sound spatialization system. This will serve as a prototype for a larger system that could be used in concert halls in the framework of professional music productions. The Masters internship at GRAME-CNCM will imply the development of an audio effect/sound synthesizer module based on the platform developed in the previous steps of the project and programmable at a high level in \F{}. The postdoc at LMFA/GRAME-CNCM will focus on using the platform developed in the previous steps in the context of active control of room acoustics, digital lutherie, and other fields related to audio/acoustics. He will also set and conduct perceptual experiments with professional musicians/performers to evaluate/validate the systems he will design. 
 
 
 \section*{Project Impact and Benefits}
@@ -323,11 +324,11 @@ Possibilities unveiled by these developments will impact a wide range of fields 
  &@Insa-Lyon & @Centrale-Lyon  & @Grame &   @Total \\ 
  & @Citi & @LMFA & & \\ 
  & @(rate 100\%) & @(100\%) &   @(rate 50\%) &  @(k\euro)\\ \hline \hline
-@Man Month ANR & 48 & 18  & 12 & \\ \hline
+@Man Month ANR & 36 & 24  & 42 & \\ \hline
 % calcul Insa 36 mois PhD + 12 mois ingé confirmé 36*3083+12*3924
 % clacul Centrale fait avec les cout insa 18**3924
 % calcul Grame fait avec les cout insa 12*3924 + 12*554
-@Staff (k\euro)   & 158 & 54 & 5 & sum(b5:d5) \\ \hline
+@Staff (k\euro)   & 158 & 54 & 109 & sum(b5:d5) \\ \hline
 @Equipment  (k\euro)   &  20 &  10  & 20 &sum(b6:d6) \\  \hline
 @Travel  (k\euro)    &  20 & 20  & 30  & sum(b7:d7)\\  \hline
 @Management  (k\euro)    &  5 & 5  & 15  & sum(b8:d8) \\
@@ -352,11 +353,11 @@ Possibilities unveiled by these developments will impact a wide range of fields 
 @PhD thesis and internship &
 @Total
  \\ \hline \hline
-@Insa Citi 	& 24 	& 	&  12	& 36 & sum(b2:e2) \\
+@Insa Citi 	& 24 	& 0	&  0	& 36 & sum(b2:e2) \\
 \hline
-@Centrale LMFA  	&  12	& 	&  12	&    & sum(b3:e3) \\
+@Centrale LMFA  	&  12	& 0	&  18	&  6  & sum(b3:e3) \\
 \hline
-@Grame	&  24	&   	& 	& 12 & sum(b4:e4) \\
+@Grame	&  0	&  24 	& 12	& 6 & sum(b4:e4) \\
 \hline \hline 
 @Total 	&  sum(b2:b4)	&  sum(c2:c4)	& sum(d2:d4) & sum(e2:e4)  &  sum(b7:e4)\\
 \hline
