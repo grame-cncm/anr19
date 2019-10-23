@@ -1,4 +1,5 @@
 \documentclass[a4paper,10pt]{article}
+\newcommand{\budget}{439}
 
 %page geometry
 \usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
@@ -188,7 +189,7 @@
 \pagestyle{fancy}
 %\fancyhfoffset[re]{4cm}
 \lhead{{\myacro} (42 mois) -- Coordinateur: Romain Michon (GRAME-CNCM)\\ \myinstrument - Domaines \mydomain{}}
-\rhead{{\LARGE\textcolor{ANRblue}{AAPG ANR 2019}}\\ Aide prévisionnelle: TODO\euro}
+\rhead{{\LARGE\textcolor{ANRblue}{AAPG ANR 2019}}\\ Aide prévisionnelle: {\budget}K\euro}
 \renewcommand{\headrulewidth}{0pt}
 
 \lfoot{}
@@ -296,7 +297,7 @@ The two other academic partners of the project will be INSA-Lyon through  the CI
 \paragraph{Project Organization}
 
 The project is organized in 6 workpackages for a total of 42 months, as detailed in Figure~\ref{fig:wp}. \textit{WP0} deals with management, coordination and dissemination. \textit{WP1} is the heart of the project and the main focus of the PhD. It will deal with adapting the \F{} compiler to generate ready-to-use efficient FPGA IPs. \textit{WP2} will begin six months after \textit{WP1} and will focus on implementing the hardware platform (a multichannel FPGA-based audio processor) that will be used throughout the project. \textit{WP3} will leverage the results from \textit{WP1} and \textit{WP2} to implement a spatial reverberation system in the LMFA sound spatialization system that will benefit directly from the computational power of the FPGA. \textit{WP4} will focus on the development of a hardware and software platform for high efficiency and ultra-low-latency audio signal processing and synthesis. This platform will be controllable through a user interface as well as standard communication protocols used in the field of music (i.e., MIDI, OSC, etc.).
-Finally, \textit{WP5} will happen in two stages. First, the platform developed in \textit{WP1} and \textit{WP2} will be applied to acoustics active control. Then, the system developed in the first stage will be validated through a perceptual and artistic study involving professional performers/musicians. We're aiming for a total budget of TODO\euro{} that will cover the human resources mentioned in the following paragraph as well as travel, administrative and equipment expenses.
+Finally, \textit{WP5} will happen in two stages. First, the platform developed in \textit{WP1} and \textit{WP2} will be applied to acoustics active control. Then, the system developed in the first stage will be validated through a perceptual and artistic study involving professional performers/musicians. We're aiming for a total budget of {\budget}K\euro{} that will cover the human resources mentioned in the following paragraph as well as travel, administrative and equipment expenses.
 
 \paragraph{Human Resources}
 
@@ -325,18 +326,18 @@ Possibilities unveiled by these developments will impact a wide range of fields 
  & @Citi & @LMFA & & \\ 
  & @(rate 100\%) & @(100\%) &   @(rate 50\%) &  @(k\euro)\\ \hline \hline
 @Man Month ANR & 36 & 24  & 42 & \\ \hline
-% calcul Insa 36 mois PhD + 12 mois ingé confirmé 36*3083+12*3924
-% clacul Centrale fait avec les cout insa 18**3924
-% calcul Grame fait avec les cout insa 12*3924 + 12*554
-@Staff (k\euro)   & 158 & 54 & 109 & sum(b5:d5) \\ \hline
+% calcul Insa 36 mois PhD: 36*3083: 111k€
+%+12*3924
+% clacul Centrale fait avec les cout insa 18*3924+6*554=74k€
+% calcul Grame fait par le Grame
+@Staff (k\euro)   & 111 & 74 & 109 & sum(b5:d5) \\ \hline
 @Equipment  (k\euro)   &  20 &  10  & 20 &sum(b6:d6) \\  \hline
 @Travel  (k\euro)    &  20 & 20  & 30  & sum(b7:d7)\\  \hline
 @Management  (k\euro)    &  5 & 5  & 15  & sum(b8:d8) \\
 \hline\hline
 @Total requested (k\euro)     & sum(b5:b8)  & sum(c5:c8)    & sum(d5:d8)  & sum(e5:e8)  \\ \hline
 \end{spreadtab}
- 
-\end{center}
+ \end{center}
 
 \section{A enlever avant de soumettre: Taux de précarité (facultatif mais conseillé en 2019)}
 {Man month repartition per  partner }
