@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\newcommand{\budget}{439}
+\newcommand{\budget}{408}
 
 %page geometry
 \usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
@@ -221,34 +221,9 @@ Axe 8.6. Révolution numérique : rapports au savoir et à la culture}
 
 \section*{Context, Position and Objectives of the Proposal}
 
-% ELEMENTS A VERIFIER (source: aapg-2020-guide)
-% - Description des objectifs et des hypothèses de recherche ; 
-% - positionnement du projet par rapport à l’état de l’art ; 
-% - présentation de la méthodologie utilisée pour atteindre les objectifs ; 
-% - démonstration du caractère novateur du projet, de son originalité tant du point de vue des objectifs que de la méthodologie ; 
-% - positionnement du projet par rapport aux enjeux de recherche de l’axe scientifique choisi.
-
-% Cet axe permet de soutenir des actions de recherche interdisciplinaires en lien avec les deux grands domaines « Sciences du numérique » et « Sciences humaines et sociales ». Les projets attendus entreront dans l’un des deux grands domaines :
-%• Humanités numériques :
-% - éducation et formation,
-% - création et partage des savoirs,
-% - arts, culture et patrimoine.
-%• Sciences sociales computationnelles
-%
-% Les projets seront portés par une équipe ou un partenariat interdisciplinaire, réunissant des chercheurs en sciences et technologies du numérique et des chercheurs en sciences humaines et sociales.
-%Les progrès visés peuvent concerner un seul champ disciplinaire (SHS ou STIC) s’ils mobilisent des concepts ou des outils issus d’avancées récentes de l’autre champ. Ces conditions explicitent un encouragement au dépôt de projets interdisciplinaires, indiquant en quoi et comment la co-construction d’objets de recherche communs, à l’interface des disciplines, permet de mieux formaliser des questionnements scientifiques et/ou contribuer au renouvellement des méthodologies. Cet axe ne concerne donc pas les projets qui mèneraient les deux types de recherche (SHS et STIC) dans deux séries disjointes de tâches.
-
-%Mots-clés associés : Scénarisation pédagogique, jeux sérieux et ludification, personnalisation et adaptation à l’apprenant, formation aux technologies numériques, littératie numérique, enseignement à distance, co-apprentissage, co-enseignement, école numérique et territoire connecté, environnement immersif (école, classe, outil), approches cognitives, sociologiques et anthropologique de l’apprentissage de/par le numérique, innovation pédagogique, numérique et transformation des pratiques de recherche et de savoir, accès aux publications et aux données de la recherche, crédibilité et vérification de l’information en ligne, éducation aux médias, analyse des discours et controverses, recours aux données massives et nouvelles capacités d’analyse, quantification de soi, sciences du comportement, humanités numériques, données ouvertes et données liées, approches numériques du patrimoine, patrimoine nativement numérique, modélisation des connaissances, accès à l’information, médiations culturelles et numérique, collections virtuelles, dispositifs immersifs et nomades, approche numérique de la création artistique, gouvernementalité numérique / algorithmique, démocratie et débats citoyens dans le contexte numérique, analyse des politiques publiques via l’ouverture des données, sciences sociales computationnelles.
-
-% Mots-clés à placer :
-% environnement immersif
-% innovation numérique
-% dispositifs immersifs et nomades
-% approche numérique de la création artistique
-
 \subsection*{Overview}
 
-Embedded systems for audio and multimedia are increasingly used in the arts and culture (e.g., interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.). However, programming them can be out of reach to artists, creators, or non-specialized engineers. In parallel with the emergence of the ``maker culture,''\footnote{\url{https://makerfaire.com/maker-movement}} progress have been made to make these types of systems more accessible, bringing more flexibility in digital approaches to artistic creation. For instance, the Arduino platform\footnote{\url{https://www.arduino.cc}} greatly simplified the programming process of microcrontrollers. Similarly, Domain Specific programming Langages (DSL) such as \F{}\footnote{\F{} is a DSL for real-time audio signal processing primarily developed at GRAME-CNCM and by a worldwide community. \F{} is based on a compiler ``translating'' DSP specifications written in \F{} into a wide range of lower-level languages (e.g., C, C++, Rust, Java, WASM, LLVM bitcode, etc.). Thanks to its ``architecture'' system, generated DSP objects can be embedded into template programs (wrappers) used to turn a \F{} program into a specific ready-to-use object (e.g., standalone, plug-in, smartphone app, webpage, etc.). } 
+Embedded systems for audio and multimedia are increasingly used in the arts and culture (e.g., interactive systems, musical instruments, virtual and augmented reality, artistic creation tools, musical composition and performance, etc.). However, programming them can be out of reach to artists, creators, or non-specialized engineers. In parallel with the emergence of the ``maker culture,''\footnote{\url{https://makerfaire.com/maker-movement} (All URLs were verified on Oct. 23, 2019).} progress have been made to make these types of systems more accessible, bringing more flexibility in digital approaches to artistic creation. For instance, the Arduino platform\footnote{\url{https://www.arduino.cc}} greatly simplified the programming process of microcrontrollers. Similarly, Domain Specific programming Langages (DSL) such as \F{}\footnote{\F{} is a DSL for real-time audio signal processing primarily developed at GRAME-CNCM and by a worldwide community. \F{} is based on a compiler ``translating'' DSP specifications written in \F{} into a wide range of lower-level languages (e.g., C, C++, Rust, Java, WASM, LLVM bitcode, etc.). Thanks to its ``architecture'' system, generated DSP objects can be embedded into template programs (wrappers) used to turn a \F{} program into a specific ready-to-use object (e.g., standalone, plug-in, smartphone app, webpage, etc.). } 
 \cite{Orlarey2009} facilitated the implementation of real-time audio Digital Signal Processing (DSP) algorithms.
 
 However, many limitations remain, especially for real-time applications where latency plays a crucial role (e.g. efficient active control of sound where audio processing should be faster than the propagation of sound \cite{elliott2000signal}, digital musical instruments playability \cite{Lago2004}, digital audio effects, etc.). While latency can be potentially reduced on ``standard'' computing platforms such as personal computers based on a CPU (Central Processing Unit), going under the ``one millisecond threshold'' is usually impossible because of buffering.
@@ -256,7 +231,7 @@ However, many limitations remain, especially for real-time applications where la
 FPGAs (Field Programmable Gate Arrays) can help solve this problem as well as most of the limitations of traditional computing platforms used for musical and artistic applications. These chips are known for their high computational capabilities \cite{Choi2013,Pfeifle2012} and very low-latency performances \cite{Verstraelen2014}. They also provide a large number of GPIOs (General Purpose Inputs and Outputs) which can be exploited to implement modern real-time multi-channel processing algorithms (e.g. sound fields capture using a very large number of digital microphones \cite{salze2019new}, active sound control over a large spatial region \cite{Zhang2018}, etc.). 
 
 But FPGAs remain extremely complex to program, even with state-of-the-art high-level tools,\footnote{FPGAs are configured/programmed using a Hardware Description Language (HDL) such as VHDL or Verilog. The learning curve and the electrical engineering skills required to master these types of environments make them out of reach to the real-time audio DSP community. Solutions exist to program FPGAs at a higher level (i.e., LabVIEW: \url{https://www.ni.com/fr-fr/shop/labview.html}, Vivado HLS: \url{https://www.xilinx.com/HLS}, etc.), but none of them is specifically dedicated nor adapted to real-time audio DSP.} making them largely inaccessible to musicians, digital artists and makers communities.
-There are currently only a few examples of professional FPGA-based real-time audio DSP systems (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} etc.) and in these applications, FPGAs are dedicated to a specific tasks, limiting creativity and flexibility.
+There are currently only a few examples of professional FPGA-based real-time audio DSP systems (i.e., Antelope Audio,\footnote{\url{https://en.antelopeaudio.com}} Korora Audio,\footnote{\url{https://www.kororaaudio.com}} etc.) and in these applications, FPGAs are dedicated to a specific task, limiting creativity and flexibility.
 
 The \PP{} project was thought to overcome the aforementioned difficulties (i.e. low latency, computing capacity, multi-channel, and ease of programming). The goal of \PP{} is to design an FPGA-based platform for multichannel ultra-low-latency audio Digital Signal Processing (DSP) programmable at high-level with \F{} and usable for various applications ranging from sound synthesis and processing to active sound control and artificial sound field/room acoustics. In addition to that, we then plan to use this tool to: 
 
@@ -276,7 +251,7 @@ The main goal of \PP{} is to \textbf{develop a new \F{} architecture back-end fo
 % F2D Je pense qu'il faut mettre en gras ci-dessous 
 This type of system has a wide range of applications in multiple domains. As mentioned earlier, music technology is in high demand for low latency because it helps increasing the playability of musical instruments on stage. Hence, the platform developed as part of \PP{} will be used to design programmable digital musical instruments and effect processors. In that context, the computational power of the FPGA will be exploited to run complex algorithms (e.g., physics-based models of musical instruments, modal reverbs \cite{Abel2009}, etc.) that are too costly to run on a traditional platform (i.e., laptop, etc.). GRAME-CNCM has decades of experience in that domain. We plan to \textbf{implement a sound processing/synthesizer module based on the platform} implemented in \PP{}.
 
-Other fields of application for the platform that we plan to develop as part of \PP{} is active control of acoustical spaces (e.g., noise cancellation in rooms, car passenger compartment, etc.) and virtual room acoustics (e.g., to apply the acoustical properties of a space to another, etc.). Sound field rendering systems are in high demand for low audio latency (i.e., to beat acoustical waves traveling at the speed of sound in the air) and high computational power (i.e., to implement Finite Difference Time Domain: FDTD schemes \cite{Bilbao2009}). While FPGAs have been used in the past for this type of applications \cite{Tan2019}, there is a lack for a high level tool to program and implement these types of algorithms. Similarly, FPGAs should allow to run in real-time room acoustics simulation algorithms such as modal reverbs \cite{Abel2019} in the time domain, which is not currently possible on regular computers. LMFA École Centrale with Pierre Lecomte has a lot of experience in these domains and a wide range of equipments at its disposal (e.g., sound field array, etc.) that will be used/adapted to this purpose. We plan to \textbf{prototype real-world examples of room acoustics simulation/modifications} that could then be used in a concert setting. Such experiments have been attempted in the past at the Center for Computer Research in Music and Acoustics (CCRMA)\footnote{\url{https://ccmra.stanford.edu}} at Stanford University that is indirectly related to \PP{} thanks to Romain Michon's affiliation. In particular, the acoustics of the Hagia Sophia cathedral in Istanbul has been recreated in Stanford's Bing Concert Hall for a series of concerts centered around the idea of ``archeoacoustics'' \cite{Abel2009}. The platform that we plan to implement as part of \PP{} will be used to take this type of system to a completely different level, hence we plan to organize events centered around these concepts with the help of GRAME-CNCM music production department.
+Other fields of application for the platform that we plan to develop as part of \PP{} is active control of acoustical spaces (e.g., noise cancellation in rooms, car passenger compartment, etc.) and virtual room acoustics (e.g., to apply the acoustical properties of a space to another, etc.). Sound field rendering systems are in high demand for low audio latency (i.e., to beat acoustical waves traveling at the speed of sound in the air) and high computational power (i.e., to implement Finite Difference Time Domain: FDTD schemes \cite{Bilbao2009}). While FPGAs have been used in the past for this type of applications \cite{Tan2019}, there is a lack for a high level tool to program and implement these types of algorithms. Similarly, FPGAs should allow to run in real-time room acoustics simulation algorithms such as modal reverbs \cite{Abel2019} in the time domain, which is not currently possible on regular computers. LMFA École Centrale with Pierre Lecomte has a lot of experience in these domains and a wide range of equipments at its disposal (e.g., sound field array, etc.) that will be used/adapted to this purpose. We plan to \textbf{prototype real-world examples of room acoustics simulation/modifications} that could then be used in a concert setting. Such experiments have been attempted in the past at the Center for Computer Research in Music and Acoustics (CCRMA)\footnote{\url{https://ccmra.stanford.edu}} at Stanford University that is indirectly related to \PP{} thanks to Romain Michon's affiliation. In particular, the acoustics of the Hagia Sophia cathedral in Istanbul has been recreated in Stanford's Bing Concert Hall for a series of concerts centered around the idea of ``archeoacoustics'' \cite{Abel2009}. The platform that we plan to implement as part of \PP{} will be used to take this type of system to a completely different level. Hence, we plan to organize events centered around these concepts with the help of GRAME-CNCM music production department.
 
 Finally, applications around active control are not limited to acoustical spaces. Musical instrument acoustics/digital lutherie are increasingly using these types of techniques \cite{Zhang2018} not to mention industrial applications outside of the field of audio (e.g., aircraft jet engine vibration control, etc.) which would be easily reachable thanks to LMFA's expertise in these domains \cite{salze2019new}.
 
@@ -294,20 +269,19 @@ The two other academic partners of the project will be INSA-Lyon through  the CI
   \label{fig:wp}
 \end{figure}
 
+\vspace{-0.5cm} % c'est dégueulasse, mais c'est comme ça...
 \paragraph{Project Organization}
 
-The project is organized in 6 workpackages for a total of 42 months, as detailed in Figure~\ref{fig:wp}. \textit{WP0} deals with management, coordination and dissemination. \textit{WP1} is the heart of the project and the main focus of the PhD. It will deal with adapting the \F{} compiler to generate ready-to-use efficient FPGA IPs. \textit{WP2} will begin six months after \textit{WP1} and will focus on implementing the hardware platform (a multichannel FPGA-based audio processor) that will be used throughout the project. \textit{WP3} will leverage the results from \textit{WP1} and \textit{WP2} to implement a spatial reverberation system in the LMFA sound spatialization system that will benefit directly from the computational power of the FPGA. \textit{WP4} will focus on the development of a hardware and software platform for high efficiency and ultra-low-latency audio signal processing and synthesis. This platform will be controllable through a user interface as well as standard communication protocols used in the field of music (i.e., MIDI, OSC, etc.).
+The project is organized in 5 workpackages for a total of 42 months, as detailed in Figure~\ref{fig:wp}. \textit{WP0} deals with management, coordination and dissemination. \textit{WP1} is the heart of the project and the main focus of the PhD. It will deal with adapting the \F{} compiler to generate ready-to-use efficient FPGA IPs. \textit{WP2} will begin six months after \textit{WP1} and will focus on implementing the hardware platform (a multichannel FPGA-based audio processor) that will be used throughout the project. \textit{WP3} will leverage the results from \textit{WP1} and \textit{WP2} to implement a spatial reverberation system in the LMFA sound spatialization system that will benefit directly from the computational power of the FPGA. \textit{WP4} will focus on the development of a hardware and software platform for high efficiency and ultra-low-latency audio signal processing and synthesis. This platform will be controllable through a user interface as well as standard communication protocols used in the field of music (i.e., MIDI, OSC, etc.).
 Finally, \textit{WP5} will happen in two stages. First, the platform developed in \textit{WP1} and \textit{WP2} will be applied to acoustics active control. Then, the system developed in the first stage will be validated through a perceptual and artistic study involving professional performers/musicians. We're aiming for a total budget of {\budget}K\euro{} that will cover the human resources mentioned in the following paragraph as well as travel, administrative and equipment expenses.
 
 \paragraph{Human Resources}
 
 In addition to the permanent lab members working on the project, one PhD thesis, one postdoc of a year and a half, two 6 months Masters level internships, and one man-year of advanced engineer are foreseen (see Figure~\ref{fig:wp}). The PhD will be dedicated to modify the \F{} compiler to generate efficient FPGA IPs for real-time audio signal processing applications. One of the main challenge will be related to adding fixed-point support to the code generated by \F{} through the use of FloPoCo. The man-year of engineer at GRAME-CNCM will be centered around the development of the FPGA-based multichannel audio signal processor hardware platform that will be used during the next steps of the project. The masters internship at LMFA will consist in using the tools developed during the first year and half of the project to implement a multichannel artificial reverberation system in the LMFA's sound spatialization system. This will serve as a prototype for a larger system that could be used in concert halls in the framework of professional music productions. The Masters internship at GRAME-CNCM will imply the development of an audio effect/sound synthesizer module based on the platform developed in the previous steps of the project and programmable at a high level in \F{}. The postdoc at LMFA/GRAME-CNCM will focus on using the platform developed in the previous steps in the context of active control of room acoustics, digital lutherie, and other fields related to audio/acoustics. He will also set and conduct perceptual experiments with professional musicians/performers to evaluate/validate the systems he will design. 
 
-
 \section*{Project Impact and Benefits}
 
-Audio DSP is used everywhere is nowadays life (e.g., smartphones, TVs, cars, tablets, computers, musical instruments, speakers, etc.). Computational power and low-latency are probably the most important technical factors when it comes to these types of systems. FPGAs can help take this field to a new level. This is only possible if this type of platform is easily accessible to non-FPGA engineers. We believe that \PP{} has the potential to revolutionize the field of real-time audio DSP in the same way than Arduinos disrupted the world of prototyping and engineering. % RM: too much? :)
-Possibilities unveiled by these developments will impact a wide range of fields and could lead to plethora of technological and industrial applications to design concert halls of a new kind, suppress noise in a car's passenger compartment, diminish vibrations in airplane jet engines, improve existing digital musical instrument technologies, etc. 
+Audio DSP is used everywhere is nowadays life (e.g., smartphones, TVs, cars, tablets, computers, musical instruments, speakers, etc.). Computational power and low-latency are probably the most important technical factors when it comes to these types of systems. FPGAs can help take this field to a new level. This is only possible if this type of platform is easily accessible to non-FPGA engineers. We believe that \PP{} has the potential to revolutionize the field of real-time audio DSP in the same way than Arduinos disrupted the world of prototyping and engineering. Possibilities unveiled by these developments will impact a wide range of fields and could lead to plethora of technological and industrial applications to design concert halls of a new kind, suppress noise in a car's passenger compartment, diminish vibrations in airplane jet engines, improve existing digital musical instrument technologies, etc. 
 
 {\small
 
@@ -316,55 +290,51 @@ Possibilities unveiled by these developments will impact a wide range of fields 
 
 }
 % On vire tout ça et ça part dans un tableur excel 
-\newpage
-\section{A enlever avant de soumettre:Budget}
-
-\begin{center}\small
-  \begin{spreadtab}{{tabular}{|c|c|c|c||c|}}
-\hline
- &@Insa-Lyon & @Centrale-Lyon  & @Grame &   @Total \\ 
- & @Citi & @LMFA & & \\ 
- & @(rate 100\%) & @(100\%) &   @(rate 50\%) &  @(k\euro)\\ \hline \hline
-@Man Month ANR & 36 & 24  & 42 & \\ \hline
-% calcul Insa 36 mois PhD: 36*3083: 111k€
-%+12*3924
-% clacul Centrale fait avec les cout insa 18*3924+6*554=74k€
-% calcul Grame fait par le Grame
-@Staff (k\euro)   & 111 & 74 & 109 & sum(b5:d5) \\ \hline
-@Equipment  (k\euro)   &  20 &  10  & 20 &sum(b6:d6) \\  \hline
-@Travel  (k\euro)    &  20 & 20  & 30  & sum(b7:d7)\\  \hline
-@Management  (k\euro)    &  5 & 5  & 15  & sum(b8:d8) \\
-\hline\hline
-@Total requested (k\euro)     & sum(b5:b8)  & sum(c5:c8)    & sum(d5:d8)  & sum(e5:e8)  \\ \hline
-\end{spreadtab}
- \end{center}
-
-\section{A enlever avant de soumettre: Taux de précarité (facultatif mais conseillé en 2019)}
-{Man month repartition per  partner }
-
-\begin{spreadtab}{{tabular}{|c||p{2.4cm}|p{2cm}|p{2.7cm}|p{2.5cm}||p{1cm}|}}
-\hline
-@Institution &
-@permanent
- (institution) &
-@permanent 
- (ANR) &
-@Non-permanent
- (ANR) &
-@PhD thesis and internship &
-@Total
- \\ \hline \hline
-@Insa Citi 	& 24 	& 0	&  0	& 36 & sum(b2:e2) \\
-\hline
-@Centrale LMFA  	&  12	& 0	&  18	&  6  & sum(b3:e3) \\
-\hline
-@Grame	&  0	&  24 	& 12	& 6 & sum(b4:e4) \\
-\hline \hline 
-@Total 	&  sum(b2:b4)	&  sum(c2:c4)	& sum(d2:d4) & sum(e2:e4)  &  sum(b7:e4)\\
-\hline
-\multicolumn{6}{|l|}{\em taux de précarité (<<d5>>/(<<b5>>+<<c5>>+<<d5>>)) :  :={round(d5/sum(b5:d5),3)}} \\
-\hline
-\end{spreadtab}
+% \newpage
+% \section{A enlever avant de soumettre:Budget}
+% 
+% \begin{center}\small
+%   \begin{spreadtab}{{tabular}{|c|c|c|c||c|}}
+% \hline
+%  &@Insa-Lyon & @Centrale-Lyon  & @Grame &   @Total \\ 
+%  & @Citi & @LMFA & & \\ 
+%  & @(rate 100\%) & @(100\%) &   @(rate 50\%) &  @(k\euro)\\ \hline \hline
+% @Man Month ANR & 36 & 24  & 42 & \\ \hline
+% @Staff (k\euro)   & 111 & 62 & 90 & sum(b5:d5) \\ \hline
+% @Equipment  (k\euro)   &  20 &  10  & 20 &sum(b6:d6) \\  \hline
+% @Travel  (k\euro)    &  20 & 20  & 30  & sum(b7:d7)\\  \hline
+% @Management  (k\euro)    &  5 & 5  & 15  & sum(b8:d8) \\
+% \hline\hline
+% @Total requested (k\euro)     & sum(b5:b8)  & sum(c5:c8)    & sum(d5:d8)  & sum(e5:e8)  \\ \hline
+% \end{spreadtab}
+%  \end{center}
+% 
+% \section{A enlever avant de soumettre: Taux de précarité (facultatif mais conseillé en 2019)}
+% {Man month repartition per  partner }
+% 
+% \begin{spreadtab}{{tabular}{|c||p{2.4cm}|p{2cm}|p{2.7cm}|p{2.5cm}||p{1cm}|}}
+% \hline
+% @Institution &
+% @permanent
+%  (institution) &
+% @permanent 
+%  (ANR) &
+% @Non-permanent
+%  (ANR) &
+% @PhD thesis and internship &
+% @Total
+%  \\ \hline \hline
+% @Insa Citi 	& 24 	& 0	&  0	& 36 & sum(b2:e2) \\
+% \hline
+% @Centrale LMFA  	&  12	& 0	&  18	&  6  & sum(b3:e3) \\
+% \hline
+% @Grame	&  0	&  24 	& 12	& 6 & sum(b4:e4) \\
+% \hline \hline 
+% @Total 	&  sum(b2:b4)	&  sum(c2:c4)	& sum(d2:d4) & sum(e2:e4)  &  sum(b7:e4)\\
+% \hline
+% \multicolumn{6}{|l|}{\em taux de précarité (<<d5>>/(<<b5>>+<<c5>>+<<d5>>)) :  :={round(d5/sum(b5:d5),3)}} \\
+% \hline
+% \end{spreadtab}
 
 
 
